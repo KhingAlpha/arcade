@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade</title>
+    <link rel="stylesheet" href="arcade.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="logos">
+            <img class="ilogo" src="img/arcade logo and typo-05.png" alt="">
+        </div>
+
+        <nav>
+            <ul id="nav-links">
+                <li>
+                    <a href="#menu">Menu</a>
+                </li>
+                <li>
+                    <a href="">Gallery</a>
+                </li>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+            </ul>  
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <img src="img/arcade final logo-01.jpg" alt=""> 
+        <a href="#menu"><button class="btn">View Menu</button></a>
+    </div>
+
+    <!--Menu section-->
+    <section id="menu" aria-label="Food menu">
+        <h2 class="category-title">Menu</h2>
+
+        <div>
+            <h3 class="meal-type">Loaded Fries</h3>
+            <hr>
+            <div class="lf">
+                <div class="menu-item" data-name="Chicken Loaded fries">
+                    <img src="img/chicken loaded/chicken.jpg" alt="">
+                    <div class="item-info">
+                        <h3 class="item-name">Chicken Loaded Fries</h3>
+                        <p class="item-description">Fries loaded with chicken with cheese and all that</p>
+                    </div>
+                    <div class="size-options" role="radiogroup" aria-label="Select size for Chicken Loaded Fries">
+                        <input type="radio" id="chicken-loaded-fries-small" name="size-chicken-loaded-fries" value="Small" data-price="60.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="chicken-loaded-fries-small">Small (₵60.00)</label>
+
+                        <input type="radio" id="chicken-loaded-fries-medium" name="size-chicken-loaded-fries" value="Medium" data-price="85.00" data-maxstock="20" />
+                        <label class="size-option-label" for="chicken-loaded-fries-medium">Medium (₵85.00)</label>
+
+                        <input type="radio" id="chicken-loaded-fries-large" name="size-chicken-loaded-fries" value="Large" data-price="130.00" data-maxstock="20" />
+                        <label class="size-option-label" for="chicken-loaded-fries-large">Large (₵130.00)</label>
+
+                        <div class="item-price">₵60.00</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-name="Sausage Loaded fries">
+                    <img src="img/chicken loaded/sausage.jpg" alt="">
+                    <div class="item-info">
+                        <h3 class="item-name">Sausage Loaded Fries</h3>
+                        <p class="item-description">Fries loaded with sausage with cheese and all that</p>
+                    </div>
+                    <div class="size-options" role="radiogroup" aria-label="Select size for Sausage Loaded Fries">
+                        <input type="radio" id="sausage-loaded-fries-small" name="size-sausage-loaded-fries" value="Small" data-price="60.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="sausage-loaded-fries-small">Small (₵60.00)</label>
+
+                        <input type="radio" id="sausage-loaded-fries-medium" name="size-sausage-loaded-fries" value="Medium" data-price="85.00" data-maxstock="20" />
+                        <label class="size-option-label" for="sausage-loaded-fries-medium">Medium (₵85.00)</label>
+
+                        <input type="radio" id="sausage-loaded-fries-large" name="size-sausage-loaded-fries" value="Large" data-price="130.00" data-maxstock="20" />
+                        <label class="size-option-label" for="sausage-loaded-fries-large">Large (₵130.00)</label>
+
+                        <div class="item-price">₵60.00</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>  
+
+                <div class="menu-item" data-name="Ham Loaded fries">
+                    <img src="img/chicken loaded/ham.jpg" alt="">
+                    <div class="item-info">
+                        <h3 class="item-name">Ham Loaded Fries</h3>
+                        <p class="item-description">Fries loaded with ham with cheese and all that</p>
+                    </div>
+                    <div class="size-options" role="radiogroup" aria-label="Select size for Ham Loaded Fries">
+                        <input type="radio" id="ham-loaded-fries-small" name="size-ham-loaded-fries" value="Small" data-price="70.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="ham-loaded-fries-small">Small (₵70.00)</label>
+
+                        <input type="radio" id="ham-loaded-fries-medium" name="size-ham-loaded-fries" value="Medium" data-price="90.00" data-maxstock="20" />
+                        <label class="size-option-label" for="ham-loaded-fries-medium">Medium (₵90.00)</label>
+
+                        <input type="radio" id="ham-loaded-fries-large" name="size-ham-loaded-fries" value="Large" data-price="140.00" data-maxstock="20" />
+                        <label class="size-option-label" for="ham-loaded-fries-large">Large (₵140.00)</label>
+
+                        <div class="item-price">₵70.00</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>  
+
+                <div class="menu-item" data-name="Beef Loaded fries">
+                    <img src="img/chicken loaded/beef.jpg" alt="">
+                    <div class="item-info">
+                        <h3 class="item-name">Beef Loaded Fries</h3>
+                        <p class="item-description">Fries loaded with beef with cheese and all that</p>
+                    </div>
+                    <div class="size-options" role="radiogroup" aria-label="Select size for Beef Loaded Fries">
+                        <input type="radio" id="beef-loaded-fries-small" name="size-beef-loaded-fries" value="Small" data-price="70.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="beef-loaded-fries-small">Small (₵70.00)</label>
+
+                        <input type="radio" id="beef-loaded-fries-medium" name="size-beef-loaded-fries" value="Medium" data-price="90.00" data-maxstock="20" />
+                        <label class="size-option-label" for="beef-loaded-fries-medium">Medium (₵90.00)</label>
+
+                        <input type="radio" id="beef-loaded-fries-large" name="size-beef-loaded-fries" value="Large" data-price="140.00" data-maxstock="20" />
+                        <label class="size-option-label" for="beef-loaded-fries-large">Large (₵140.00)</label>
+
+                        <div class="item-price">₵70.00</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>  
+
+                <div class="menu-item" data-name="Fullhouse Loaded fries">
+                    <img src="img/chicken loaded/full house.jpg" alt="">
+                    <div class="item-info">
+                        <h3 class="item-name">Fullhouse Loaded Fries</h3>
+                        <p class="item-description">Fries loaded with chicken, sausage, ham, beef and cheese</p>
+                    </div>
+                    <div class="size-options" role="radiogroup" aria-label="Select size for Fullhouse Loaded Fries">
+                        <input type="radio" id="fullhouse-loaded-fries-small" name="size-fullhouse-loaded-fries" value="Small" data-price="80.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="fullhouse-loaded-fries-small">Small (₵80.00)</label>
+
+                        <input type="radio" id="fullhouse-loaded-fries-medium" name="size-fullhouse-loaded-fries" value="Medium" data-price="115.00" data-maxstock="20" />
+                        <label class="size-option-label" for="fullhouse-loaded-fries-medium">Medium (₵115.00)</label>
+
+                        <input type="radio" id="fullhouse-loaded-fries-large" name="size-fullhouse-loaded-fries" value="Large" data-price="155.00" data-maxstock="20" />
+                        <label class="size-option-label" for="fullhouse-loaded-fries-large">Large (₵155.00)</label>
+
+                        <div class="item-price">₵155.00</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>  
+
+            </div>
+        </div>
+
+        
+        <div>
+            <h3 class="meal-type">Salad</h3>
+            <hr>
+            <div class="lf">
+                <div class="menu-item" data-name="Veggie salad">
+                    <img src="img/salad/veggie salad.jpg" alt="">
+                    <div class="item-info">
+                        <h3 class="item-name">Veggie Salad</h3>
+                        <p class="item-description">Vegetable salad</p>
+                    </div>
+                    <div class="size-options" role="radiogroup" aria-label="Select size for Veggie Salad">
+                        <input type="radio" id="veggie-salad-small" name="size-veggie-salad" value="Small" data-price="30.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="veggie-salad-small">Small (₵30.00)</label>
+
+                        <input type="radio" id="veggie-salad-medium" name="size-veggie-salad" value="Medium" data-price="35.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="veggie-salad-medium">Medium (₵35.00)</label>
+
+                        <input type="radio" id="veggie-salad-large" name="size-veggie-salad" value="Large" data-price="40.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="veggie-salad-large">Large (₵40.00)</label>
+
+                        <div class="item-price">₵30.00</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-name="Chicken salad">
+                    <img src="img/salad/chicken salad.jpg" alt="">
+                    <div class="item-info">
+                        <h3 class="item-name">Chicken Salad</h3>
+                        <p class="item-description">Chicken salad</p>
+                    </div>
+                    <div class="size-options" role="radiogroup" aria-label="Select size for Chicken Salad">
+                        <input type="radio" id="chicken-salad-small" name="size-chicken-salad" value="Small" data-price="45.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="chicken-salad-small">Small (₵45.00)</label>
+
+                        <input type="radio" id="chicken-salad-medium" name="size-chicken-salad" value="Medium" data-price="55.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="chicken-salad-medium">Meidum (₵55.00)</label>
+
+                        <input type="radio" id="chicken-salad-large" name="size-chicken-salad" value="Large" data-price="65.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="chicken-salad-large">Large (₵65.00)</label>
+
+                        <div class="item-price">₵45.00</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-name="Chef's salad">
+                    <img src="img/salad/chef's salad.jpg" alt="">
+                    <div class="item-info">
+                        <h3 class="item-name">Chef's Salad</h3>
+                        <p class="item-description">The chef's salad</p>
+                    </div>
+                    <div class="size-options" role="radiogroup" aria-label="Select size for Chef's Salad">
+                        <input type="radio" id="chef's-salad-small" name="size-chef's-salad" value="Small" data-price="50.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="chef's-salad-small">Small (₵50.00)</label>
+
+                        <input type="radio" id="chef's-salad-medium" name="size-chef's-salad" value="Medium" data-price="60.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="chef's-salad-medium">Meidum (₵60.00)</label>
+
+                        <input type="radio" id="chef's-salad-large" name="size-chef's-salad" value="Large" data-price="70.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="chef's-salad-large">Large (₵70.00)</label>
+
+                        <div class="item-price">₵50.00</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-name="Chef'Ghana Man salad">
+                    <img src="img/salad/ghana-man salad.jpg" alt="">
+                    <div class="item-info">
+                        <h3 class="item-name">Ghana Man Salad</h3>
+                        <p class="item-description">Ghanaian style salad</p>
+                    </div>
+                    <div class="size-options" role="radiogroup" aria-label="Select size for Ghana Man Salad">
+                        <input type="radio" id="ghana-man-salad-small" name="size-ghana-man-salad" value="Small" data-price="50.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="ghana-man-salad-small">Small (₵50.00)</label>
+
+                        <input type="radio" id="ghana-man-salad-medium" name="size-ghana-man-salad" value="Medium" data-price="60.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="ghana-man-salad-medium">Meidum (₵60.00)</label>
+
+                        <input type="radio" id="ghana-man-salad-large" name="size-ghana-man-salad" value="Large" data-price="70.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="ghana-man-salad-large">Large (₵70.00)</label>
+
+                        <div class="item-price">₵50.00</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>  
+
+                <div class="menu-item" data-name="Pittsburgh salad">
+                    <img src="img/salad/pittsburgh salad.jpg" alt="">
+                    <div class="item-info">
+                        <h3 class="item-name">Pittsburgh Salad</h3>
+                        <p class="item-description">Pittsburgh style salad</p>
+                    </div>
+                    <div class="size-options" role="radiogroup" aria-label="Select size for Pittsburgh Salad">
+                        <input type="radio" id="pittsburgh-salad-small" name="size-pittsburgh-salad" value="Small" data-price="50.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="pittsburgh-salad-small">Small (₵50.00)</label>
+
+                        <input type="radio" id="pittsburgh-salad-medium" name="size-pittsburgh-salad" value="Medium" data-price="60.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="pittsburgh-salad-medium">Meidum (₵60.00)</label>
+
+                        <input type="radio" id="pittsburgh-salad-large" name="size-pittsburgh-salad" value="Large" data-price="70.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="pittsburgh-salad-large">Large (₵70.00)</label>
+
+                        <div class="item-price">₵50.00</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>  
+
+            </div>
+        </div>
+    </section>
+
+    <div id="cart-summary" role="button" tabindex="0" aria-label="View cart. 0 items in cart.">
+        🛒 Cart <span id="cart-count">0</span>
+    </div>
+
+    <div id="cart-modal" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title">
+        <div id="cart-content">
+            <h2 id="cart-title">Your Cart</h2>
+            <div id="cart-items" role="list" aria-live="polite">
+                <!-- Cart items will appear here -->
+            </div>
+            <div id="cart-total">Total: ₵0.00</div>
+            <div id="cart-buttons">
+                <button id="clear-cart" aria-label="Clear cart">Clear Cart</button>
+                <button id="order-cart" aria-label="Place order">Place Order</button>
+                <button id="close-cart" aria-label="Close cart">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const MAX_PER_ITEM_SIZE = 20; // Default max if not set per size
+            const cart = [];
+            const cartSummary = document.getElementById('cart-summary');
+            const cartCount = document.getElementById('cart-count');
+            const cartModal = document.getElementById('cart-modal');
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            const clearCartBtn = document.getElementById('clear-cart');
+            const closeCartBtn = document.getElementById('close-cart');
+            const orderCartBtn = document.getElementById('order-cart');
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+            
+
+            function getQuantityInCart(name, size) {
+                const item = cart.find(i => i.name === name && i.size === size);
+                return item ? item.quantity : 0;
+            }
+            
+            function updateStockAvailability() {
+                document.querySelectorAll('.menu-item').forEach(menuItem => {
+                    const name = menuItem.dataset.name;
+                    const sizeInputs = menuItem.querySelectorAll('input[type="radio"]');
+                    const addToCartBtn = menuItem.querySelector('.add-to-cart');
+                    let anyAvailable = false;
+
+                    sizeInputs.forEach(input => {
+                        const size = input.value;
+                        const maxStockAttr = input.getAttribute('data-maxstock');
+                        const maxStock = maxStockAttr ? parseInt(maxStockAttr) : MAX_PER_ITEM_SIZE;
+                        const qtyInCart = getQuantityInCart(name, size);
+
+                        const label = menuItem.querySelector(`label[for="${input.id}"]`);
+
+                        if (qtyInCart >= maxStock) {
+                            input.disabled = true;
+                            if (label) {
+                                label.classList.add('sold-out');
+                            }
+                            if (input.checked) {
+                                input.checked = false;
+                                const availableInput = Array.from(sizeInputs).find(si => !si.disabled);
+                                if (availableInput) {
+                                    availableInput.checked = true;
+                                }
+                                updatePriceDisplay(menuItem);
+                            }
+                        } else {
+                            input.disabled = false;
+                            if (label) {
+                                label.classList.remove('sold-out');
+                            }
+                            anyAvailable = true;
+                        }
+                    });
+                    addToCartBtn.disabled = !anyAvailable;
+                });
+            }
+
+            function updatePriceDisplay(menuItem) {
+                const selectedInput = menuItem.querySelector('input[type="radio"]:checked');
+                const priceDisplay = menuItem.querySelector('.item-price');
+                if (selectedInput && priceDisplay) {
+                    const price = parseFloat(selectedInput.dataset.price).toFixed(2);
+                    priceDisplay.textContent = `₵${price}`;
+                } else if(priceDisplay) {
+                    priceDisplay.textContent = '';
+                }
+            }
+
+            document.querySelectorAll('.menu-item').forEach(item => {
+                updatePriceDisplay(item);
+            });
+
+            function updateCartSummary() {
+                const totalQty = cart.reduce((acc, item) => acc + item.quantity, 0);
+                cartCount.textContent = totalQty;
+                cartSummary.setAttribute('aria-label', `View cart. ${totalQty} item${totalQty !== 1 ? 's' : ''} in cart.`);
+            }
+
+            function calculateTotal() {
+                return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            }
+
+            function renderCartItems() {
+                cartItemsContainer.innerHTML = '';
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+                    cartTotal.textContent = 'Total: ₵0.00';
+                    return;
+                }
+                cart.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'cart-item';
+                    div.setAttribute('role', 'listitem');
+
+                    const nameSizeSpan = document.createElement('span');
+                    nameSizeSpan.className = 'name-size';
+                    nameSizeSpan.textContent = `${item.name} (${item.size})`;
+                    div.appendChild(nameSizeSpan);
+
+                    const qtySpan = document.createElement('span');
+                    qtySpan.className = 'quantity';
+                    qtySpan.textContent = `x${item.quantity}`;
+                    div.appendChild(qtySpan);
+
+                    const priceSpan = document.createElement('span');
+                    priceSpan.className = 'price';
+                    priceSpan.textContent = `₵${(item.price * item.quantity).toFixed(2)}`;
+                    div.appendChild(priceSpan);
+
+                    cartItemsContainer.appendChild(div);
+                });
+                cartTotal.textContent = `Total: ₵${calculateTotal().toFixed(2)}`;
+            }
+
+            function showCart() {
+                renderCartItems();
+                cartModal.classList.add('active');
+                closeCartBtn.focus();
+            }
+
+            function hideCart() {
+                cartModal.classList.remove('active');
+                cartSummary.focus();
+            }
+
+            function addToCart(name, size, price, maxStock) {
+                const existingItem = cart.find(i => i.name === name && i.size === size);
+                if (existingItem) {
+                    if (existingItem.quantity >= maxStock) {
+                        alert(`Sorry, we cannot accept more orders for ${name} (${size}). Maximum of ${maxStock} reached.`);
+                        return false;
+                    } 
+                    existingItem.quantity++;
+                } else {
+                    cart.push({ name, size, price, quantity: 1 });
+                }
+                updateStockAvailability();
+                updateCartSummary();
+                return true;
+            }
+
+            function clearCart() {
+                cart.length = 0;
+                updateCartSummary();
+                renderCartItems();
+                updateStockAvailability();
+            }
+
+            function orderCart() {
+                if (cart.length === 0) {
+                    alert('Your cart is empty. Please add items before placing an order.');
+                    return;
+                }
+                const recipient = 'agyeman.nana936@gmail.com';  // Replace with your Gmail address
+                const subject = encodeURIComponent('New Order from Delicious Bites Website');
+                let body = 'Hello,%0D%0A%0D%0AI would like to place an order for the following items:%0D%0A%0D%0A';
+
+                cart.forEach((item, index) => {
+                    body += `${index + 1}. ${item.name} (${item.size}) x${item.quantity} - ₵${(item.price * item.quantity).toFixed(2)}%0D%0A`;
+                });
+
+                body += `%0D%0ATotal: ₵${calculateTotal().toFixed(2)}%0D%0A%0D%0APlease contact me to confirm the order.%0D%0A%0D%0AThank you!`;
+
+                const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
+                window.location.href = mailtoLink;
+            }
+
+            document.querySelectorAll('.menu-item').forEach(item => {
+                const sizeInputs = item.querySelectorAll('input[type="radio"]');
+                const addToCartBtn = item.querySelector('.add-to-cart');
+                const name = item.dataset.name;
+
+                sizeInputs.forEach(input => {
+                    input.addEventListener('change', () => {
+                        updatePriceDisplay(item);
+                    });
+                });
+
+                addToCartBtn.addEventListener('click', () => {
+                    const selectedInput = item.querySelector('input[type="radio"]:checked');
+                    if (!selectedInput) {
+                        alert('Please select a size before adding to cart.');
+                        return;
+                    }
+                    const size = selectedInput.value;
+                    const price = parseFloat(selectedInput.dataset.price);
+                    const maxStockAttr = selectedInput.getAttribute('data-maxstock');
+                    const maxStock = maxStockAttr ? parseInt(maxStockAttr) : MAX_PER_ITEM_SIZE;
+
+                    if (addToCart(name, size, price, maxStock)) {
+                        alert(`Added ${name} (${size}) to cart!`);
+                    }
+                });
+            });
+
+            cartSummary.addEventListener('click', showCart);
+            cartSummary.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    showCart();
+                }
+            });
+
+            closeCartBtn.addEventListener('click', hideCart);
+
+            clearCartBtn.addEventListener('click', () => {
+                if (confirm('Are you sure you want to clear the cart?')) {
+                    clearCart();
+                }
+            });
+
+            orderCartBtn.addEventListener('click', orderCart);
+
+            cartModal.addEventListener('click', e => {
+                if (e.target === cartModal) {
+                    hideCart();
+                }
+            });
+
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape' && cartModal.classList.contains('active')) {
+                    hideCart();
+                }
+            });
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+
+            updateStockAvailability();
+            updateCartSummary();
+        })();
+    </script>
+
+</body>
+</html>
