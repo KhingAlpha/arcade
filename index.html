@@ -44,7 +44,7 @@
         <a href="#menu"><button class="btn">View Menu</button></a>
     </div>
 
-    <!--Menu section-->
+        <!--Menu section-->
     <section id="menu" aria-label="Food menu">
         <h2 class="category-title">Menu</h2>
 
@@ -69,6 +69,24 @@
                         <label class="size-option-label" for="chicken-loaded-fries-large">Large (₵130.00)</label>
 
                         <div class="item-price">₵60.00</div>
+
+                        <!-- Extras options added here -->
+                        <div class="extras-note" style="font-size: 12px; color: #666; margin-top:5px;">
+                            * To change extras on an item already in cart, please remove the item from cart and add again with new extras.
+                        </div>
+
+                        <div class="extras-options" aria-label="Extras options">
+                            <label for="extra-chicken">
+                                <input type="checkbox" id="extra-chicken" data-price="15.00">
+                                Extra Chicken (₵15.00)
+                            </label>
+
+                            <label for="extra-cheese">
+                                <input type="checkbox" id="extra-cheese" data-price="20.00">
+                                Extra Cheese (₵20.00)
+                            </label>
+                        </div>
+
                         <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
@@ -90,6 +108,24 @@
                         <label class="size-option-label" for="sausage-loaded-fries-large">Large (₵130.00)</label>
 
                         <div class="item-price">₵60.00</div>
+
+                        <!-- Extras options added here -->
+                        <div class="extras-note" style="font-size: 12px; color: #666; margin-top:5px;">
+                            * To change extras on an item already in cart, please remove the item from cart and add again with new extras.
+                        </div>
+
+                        <div class="extras-options" aria-label="Extras options">
+                            <label for="extra-sausage">
+                                <input type="checkbox" id="extra-sausage" data-price="4.50">
+                                Extra Sausage (₵4.50)
+                            </label>
+
+                            <label for="extra-cheese">
+                                <input type="checkbox" id="extra-cheese" data-price="20.00">
+                                Extra Cheese (₵20.00)
+                            </label>
+                        </div>
+
                         <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>  
@@ -111,6 +147,26 @@
                         <label class="size-option-label" for="ham-loaded-fries-large">Large (₵140.00)</label>
 
                         <div class="item-price">₵70.00</div>
+
+
+                        <!-- Extras options added here -->
+                        <div class="extras-note" style="font-size: 12px; color: #666; margin-top:5px;">
+                            * To change extras on an item already in cart, please remove the item from cart and add again with new extras.
+                        </div>
+
+                        <div class="extras-options" aria-label="Extras options">
+                            <label for="extra-ham">
+                                <input type="checkbox" id="extra-ham" data-price="15.00">
+                                Extra Ham (₵15.00)
+                            </label>
+
+                            <label for="extra-cheese">
+                                <input type="checkbox" id="extra-cheese" data-price="20.00">
+                                Extra Cheese (₵20.00)
+                            </label>
+                        </div>
+
+
                         <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>  
@@ -132,6 +188,26 @@
                         <label class="size-option-label" for="beef-loaded-fries-large">Large (₵140.00)</label>
 
                         <div class="item-price">₵70.00</div>
+
+
+                        <!-- Extras options added here -->
+                        <div class="extras-note" style="font-size: 12px; color: #666; margin-top:5px;">
+                            * To change extras on an item already in cart, please remove the item from cart and add again with new extras.
+                        </div>
+
+                        <div class="extras-options" aria-label="Extras options">
+                            <label for="extra-beef">
+                                <input type="checkbox" id="extra-beef" data-price="20.00">
+                                Extra Beef (₵20.00)
+                            </label>
+
+                            <label for="extra-cheese">
+                                <input type="checkbox" id="extra-cheese" data-price="20.00">
+                                Extra Cheese (₵20.00)
+                            </label>
+                        </div>
+
+
                         <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>  
@@ -153,6 +229,26 @@
                         <label class="size-option-label" for="fullhouse-loaded-fries-large">Large (₵155.00)</label>
 
                         <div class="item-price">₵155.00</div>
+
+
+                        <!-- Extras options added here -->
+                        <div class="extras-note" style="font-size: 12px; color: #666; margin-top:5px;">
+                            * To change extras on an item already in cart, please remove the item from cart and add again with new extras.
+                        </div>
+
+                        <div class="extras-options" aria-label="Extras options">
+                            <label for="extra-fullhouse   (chicken, sausage, ham, beef)">
+                                <input type="checkbox" id="extra-fullhouse   (chicken, sausage, ham, beef)" data-price="25.00">
+                                Extra Fullhouse(chicken, sausage, ham, beef) (₵25.00)
+                            </label>
+
+                            <label for="extra-cheese">
+                                <input type="checkbox" id="extra-cheese" data-price="20.00">
+                                Extra Cheese (₵20.00)
+                            </label>
+                        </div>
+
+
                         <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>  
@@ -285,6 +381,13 @@
                 <!-- Cart items will appear here -->
             </div>
             <div id="cart-total">Total: ₵0.00</div>
+
+            <!-- Phone Number Input -->
+             <div>
+                <label for="phone-number">Phone Number:</label>
+                <input type="text" id="phone-number" placeholder="Enter your phone number" aria-required="true" aria-label="Phone number input">
+             </div>
+
             <div id="cart-buttons">
                 <button id="clear-cart" aria-label="Clear cart">Clear Cart</button>
                 <button id="order-cart" aria-label="Place order">Place Order</button>
@@ -293,244 +396,7 @@
         </div>
     </div>
 
-    <script>
-        (function() {
-            const MAX_PER_ITEM_SIZE = 20; // Default max if not set per size
-            const cart = [];
-            const cartSummary = document.getElementById('cart-summary');
-            const cartCount = document.getElementById('cart-count');
-            const cartModal = document.getElementById('cart-modal');
-            const cartItemsContainer = document.getElementById('cart-items');
-            const cartTotal = document.getElementById('cart-total');
-            const clearCartBtn = document.getElementById('clear-cart');
-            const closeCartBtn = document.getElementById('close-cart');
-            const orderCartBtn = document.getElementById('order-cart');
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('nav-links');
-            
 
-            function getQuantityInCart(name, size) {
-                const item = cart.find(i => i.name === name && i.size === size);
-                return item ? item.quantity : 0;
-            }
-            
-            function updateStockAvailability() {
-                document.querySelectorAll('.menu-item').forEach(menuItem => {
-                    const name = menuItem.dataset.name;
-                    const sizeInputs = menuItem.querySelectorAll('input[type="radio"]');
-                    const addToCartBtn = menuItem.querySelector('.add-to-cart');
-                    let anyAvailable = false;
-
-                    sizeInputs.forEach(input => {
-                        const size = input.value;
-                        const maxStockAttr = input.getAttribute('data-maxstock');
-                        const maxStock = maxStockAttr ? parseInt(maxStockAttr) : MAX_PER_ITEM_SIZE;
-                        const qtyInCart = getQuantityInCart(name, size);
-
-                        const label = menuItem.querySelector(`label[for="${input.id}"]`);
-
-                        if (qtyInCart >= maxStock) {
-                            input.disabled = true;
-                            if (label) {
-                                label.classList.add('sold-out');
-                            }
-                            if (input.checked) {
-                                input.checked = false;
-                                const availableInput = Array.from(sizeInputs).find(si => !si.disabled);
-                                if (availableInput) {
-                                    availableInput.checked = true;
-                                }
-                                updatePriceDisplay(menuItem);
-                            }
-                        } else {
-                            input.disabled = false;
-                            if (label) {
-                                label.classList.remove('sold-out');
-                            }
-                            anyAvailable = true;
-                        }
-                    });
-                    addToCartBtn.disabled = !anyAvailable;
-                });
-            }
-
-            function updatePriceDisplay(menuItem) {
-                const selectedInput = menuItem.querySelector('input[type="radio"]:checked');
-                const priceDisplay = menuItem.querySelector('.item-price');
-                if (selectedInput && priceDisplay) {
-                    const price = parseFloat(selectedInput.dataset.price).toFixed(2);
-                    priceDisplay.textContent = `₵${price}`;
-                } else if(priceDisplay) {
-                    priceDisplay.textContent = '';
-                }
-            }
-
-            document.querySelectorAll('.menu-item').forEach(item => {
-                updatePriceDisplay(item);
-            });
-
-            function updateCartSummary() {
-                const totalQty = cart.reduce((acc, item) => acc + item.quantity, 0);
-                cartCount.textContent = totalQty;
-                cartSummary.setAttribute('aria-label', `View cart. ${totalQty} item${totalQty !== 1 ? 's' : ''} in cart.`);
-            }
-
-            function calculateTotal() {
-                return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-            }
-
-            function renderCartItems() {
-                cartItemsContainer.innerHTML = '';
-                if (cart.length === 0) {
-                    cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
-                    cartTotal.textContent = 'Total: ₵0.00';
-                    return;
-                }
-                cart.forEach(item => {
-                    const div = document.createElement('div');
-                    div.className = 'cart-item';
-                    div.setAttribute('role', 'listitem');
-
-                    const nameSizeSpan = document.createElement('span');
-                    nameSizeSpan.className = 'name-size';
-                    nameSizeSpan.textContent = `${item.name} (${item.size})`;
-                    div.appendChild(nameSizeSpan);
-
-                    const qtySpan = document.createElement('span');
-                    qtySpan.className = 'quantity';
-                    qtySpan.textContent = `x${item.quantity}`;
-                    div.appendChild(qtySpan);
-
-                    const priceSpan = document.createElement('span');
-                    priceSpan.className = 'price';
-                    priceSpan.textContent = `₵${(item.price * item.quantity).toFixed(2)}`;
-                    div.appendChild(priceSpan);
-
-                    cartItemsContainer.appendChild(div);
-                });
-                cartTotal.textContent = `Total: ₵${calculateTotal().toFixed(2)}`;
-            }
-
-            function showCart() {
-                renderCartItems();
-                cartModal.classList.add('active');
-                closeCartBtn.focus();
-            }
-
-            function hideCart() {
-                cartModal.classList.remove('active');
-                cartSummary.focus();
-            }
-
-            function addToCart(name, size, price, maxStock) {
-                const existingItem = cart.find(i => i.name === name && i.size === size);
-                if (existingItem) {
-                    if (existingItem.quantity >= maxStock) {
-                        alert(`Sorry, we cannot accept more orders for ${name} (${size}). Maximum of ${maxStock} reached.`);
-                        return false;
-                    } 
-                    existingItem.quantity++;
-                } else {
-                    cart.push({ name, size, price, quantity: 1 });
-                }
-                updateStockAvailability();
-                updateCartSummary();
-                return true;
-            }
-
-            function clearCart() {
-                cart.length = 0;
-                updateCartSummary();
-                renderCartItems();
-                updateStockAvailability();
-            }
-
-            function orderCart() {
-                if (cart.length === 0) {
-                    alert('Your cart is empty. Please add items before placing an order.');
-                    return;
-                }
-                const recipient = 'agyeman.nana936@gmail.com';  // Replace with your Gmail address
-                const subject = encodeURIComponent('New Order from Delicious Bites Website');
-                let body = 'Hello,%0D%0A%0D%0AI would like to place an order for the following items:%0D%0A%0D%0A';
-
-                cart.forEach((item, index) => {
-                    body += `${index + 1}. ${item.name} (${item.size}) x${item.quantity} - ₵${(item.price * item.quantity).toFixed(2)}%0D%0A`;
-                });
-
-                body += `%0D%0ATotal: ₵${calculateTotal().toFixed(2)}%0D%0A%0D%0APlease contact me to confirm the order.%0D%0A%0D%0AThank you!`;
-
-                const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
-                window.location.href = mailtoLink;
-            }
-
-            document.querySelectorAll('.menu-item').forEach(item => {
-                const sizeInputs = item.querySelectorAll('input[type="radio"]');
-                const addToCartBtn = item.querySelector('.add-to-cart');
-                const name = item.dataset.name;
-
-                sizeInputs.forEach(input => {
-                    input.addEventListener('change', () => {
-                        updatePriceDisplay(item);
-                    });
-                });
-
-                addToCartBtn.addEventListener('click', () => {
-                    const selectedInput = item.querySelector('input[type="radio"]:checked');
-                    if (!selectedInput) {
-                        alert('Please select a size before adding to cart.');
-                        return;
-                    }
-                    const size = selectedInput.value;
-                    const price = parseFloat(selectedInput.dataset.price);
-                    const maxStockAttr = selectedInput.getAttribute('data-maxstock');
-                    const maxStock = maxStockAttr ? parseInt(maxStockAttr) : MAX_PER_ITEM_SIZE;
-
-                    if (addToCart(name, size, price, maxStock)) {
-                        alert(`Added ${name} (${size}) to cart!`);
-                    }
-                });
-            });
-
-            cartSummary.addEventListener('click', showCart);
-            cartSummary.addEventListener('keydown', e => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    showCart();
-                }
-            });
-
-            closeCartBtn.addEventListener('click', hideCart);
-
-            clearCartBtn.addEventListener('click', () => {
-                if (confirm('Are you sure you want to clear the cart?')) {
-                    clearCart();
-                }
-            });
-
-            orderCartBtn.addEventListener('click', orderCart);
-
-            cartModal.addEventListener('click', e => {
-                if (e.target === cartModal) {
-                    hideCart();
-                }
-            });
-
-            document.addEventListener('keydown', e => {
-                if (e.key === 'Escape' && cartModal.classList.contains('active')) {
-                    hideCart();
-                }
-            });
-
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-
-
-            updateStockAvailability();
-            updateCartSummary();
-        })();
-    </script>
-
+    <script src="arcade.js"></script>
 </body>
 </html>
