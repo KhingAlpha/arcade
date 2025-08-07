@@ -90,6 +90,7 @@ nav ul li a:hover {
 
 .hero img {
   height: 400px;
+  max-width: 80%;
 }
 
 .hero .btn {
@@ -655,5 +656,6 @@ hr {
   }
 
 }
+
 
 
