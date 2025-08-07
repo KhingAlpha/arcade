@@ -89,8 +89,11 @@ nav ul li a:hover {
 }
 
 .hero img {
+  display: block;
   height: 400px;
-  max-width: 80%;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .hero .btn {
@@ -656,6 +659,7 @@ hr {
   }
 
 }
+
 
 
 
