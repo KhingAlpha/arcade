@@ -419,3 +419,82 @@ nav ul li a:hover {
     #order-cart:hover {
       background-color: #218838;
     }
+
+
+
+    /* Responsive styles for the hamburger menu */
+@media only screen and (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      #menu {
+        grid-template-columns: 1fr;
+      }
+      #cart-content {
+        width: 95vw;
+        max-width: 400px;
+      }
+    }
+
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust based on the header height */
+    right: 0;
+    background-color: #801323;
+    width: 91.7%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .hero {
+    width: 100%;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info {
+    align-items: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+}
