@@ -399,3 +399,15 @@
   updateStockAvailability();
   updateCartSummary();
 })();
+
+
+document.querySelectorAll('.view-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const href = this.getAttribute('onclick').match(/#[^']+/)[0];
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });

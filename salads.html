@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salads | Arcade</title>
+    <!--<link rel="stylesheet" href="arcade.css">-->
+    <link rel="stylesheet" href="menu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+</head>
+<body>
+<div class="header">
+        <div class="logos">
+            <a href="index.html"><img class="ilogo" src="img/arcade logo and typo-05.png" alt=""></a>
+        </div>
+
+        <nav>
+            <ul id="nav-links">
+                <li>
+                    <a href="menu.html">Menu</a>
+                </li>
+                <li>
+                    <a href="">Gallery</a>
+                </li>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+            </ul>  
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div>
+            <h3 class="meal-type">Salads</h3>
+            <!-- <hr> -->
+            <div class="lf">
+                <div class="menu-item" data-name="Veggie salad">
+                    <img src="img/salad/veggie salad.jpg" alt="">
+                    <div class="item-info">
+                        <h3 class="item-name">Veggie Salad</h3>
+                        <p class="item-description">Vegetable salad</p>
+                    </div>
+                    <div class="size-options" role="radiogroup" aria-label="Select size for Veggie Salad">
+                        <input type="radio" id="veggie-salad-small" name="size-veggie-salad" value="Small" data-price="30.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="veggie-salad-small">Small (₵30.00)</label>
+
+                        <input type="radio" id="veggie-salad-medium" name="size-veggie-salad" value="Medium" data-price="35.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="veggie-salad-medium">Medium (₵35.00)</label>
+
+                        <input type="radio" id="veggie-salad-large" name="size-veggie-salad" value="Large" data-price="40.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="veggie-salad-large">Large (₵40.00)</label>
+
+                        <div class="item-price">₵30.00</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-name="Chicken salad">
+                    <img src="img/salad/chicken salad.jpg" alt="">
+                    <div class="item-info">
+                        <h3 class="item-name">Chicken Salad</h3>
+                        <p class="item-description">Chicken salad</p>
+                    </div>
+                    <div class="size-options" role="radiogroup" aria-label="Select size for Chicken Salad">
+                        <input type="radio" id="chicken-salad-small" name="size-chicken-salad" value="Small" data-price="45.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="chicken-salad-small">Small (₵45.00)</label>
+
+                        <input type="radio" id="chicken-salad-medium" name="size-chicken-salad" value="Medium" data-price="55.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="chicken-salad-medium">Meidum (₵55.00)</label>
+
+                        <input type="radio" id="chicken-salad-large" name="size-chicken-salad" value="Large" data-price="65.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="chicken-salad-large">Large (₵65.00)</label>
+
+                        <div class="item-price">₵45.00</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-name="Chef's salad">
+                    <img src="img/salad/chef's salad.jpg" alt="">
+                    <div class="item-info">
+                        <h3 class="item-name">Chef's Salad</h3>
+                        <p class="item-description">The chef's salad</p>
+                    </div>
+                    <div class="size-options" role="radiogroup" aria-label="Select size for Chef's Salad">
+                        <input type="radio" id="chef's-salad-small" name="size-chef's-salad" value="Small" data-price="50.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="chef's-salad-small">Small (₵50.00)</label>
+
+                        <input type="radio" id="chef's-salad-medium" name="size-chef's-salad" value="Medium" data-price="60.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="chef's-salad-medium">Meidum (₵60.00)</label>
+
+                        <input type="radio" id="chef's-salad-large" name="size-chef's-salad" value="Large" data-price="70.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="chef's-salad-large">Large (₵70.00)</label>
+
+                        <div class="item-price">₵50.00</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-name="Chef'Ghana Man salad">
+                    <img src="img/salad/ghana-man salad.jpg" alt="">
+                    <div class="item-info">
+                        <h3 class="item-name">Ghana Man Salad</h3>
+                        <p class="item-description">Ghanaian style salad</p>
+                    </div>
+                    <div class="size-options" role="radiogroup" aria-label="Select size for Ghana Man Salad">
+                        <input type="radio" id="ghana-man-salad-small" name="size-ghana-man-salad" value="Small" data-price="50.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="ghana-man-salad-small">Small (₵50.00)</label>
+
+                        <input type="radio" id="ghana-man-salad-medium" name="size-ghana-man-salad" value="Medium" data-price="60.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="ghana-man-salad-medium">Meidum (₵60.00)</label>
+
+                        <input type="radio" id="ghana-man-salad-large" name="size-ghana-man-salad" value="Large" data-price="70.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="ghana-man-salad-large">Large (₵70.00)</label>
+
+                        <div class="item-price">₵50.00</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>  
+
+                <div class="menu-item" data-name="Pittsburgh salad">
+                    <img src="img/salad/pittsburgh salad.jpg" alt="">
+                    <div class="item-info">
+                        <h3 class="item-name">Pittsburgh Salad</h3>
+                        <p class="item-description">Pittsburgh style salad</p>
+                    </div>
+                    <div class="size-options" role="radiogroup" aria-label="Select size for Pittsburgh Salad">
+                        <input type="radio" id="pittsburgh-salad-small" name="size-pittsburgh-salad" value="Small" data-price="50.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="pittsburgh-salad-small">Small (₵50.00)</label>
+
+                        <input type="radio" id="pittsburgh-salad-medium" name="size-pittsburgh-salad" value="Medium" data-price="60.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="pittsburgh-salad-medium">Meidum (₵60.00)</label>
+
+                        <input type="radio" id="pittsburgh-salad-large" name="size-pittsburgh-salad" value="Large" data-price="70.00" data-maxstock="20" checked />
+                        <label class="size-option-label" for="pittsburgh-salad-large">Large (₵70.00)</label>
+
+                        <div class="item-price">₵50.00</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>  
+
+            </div>
+        </div>
+
+
+        <div id="cart-summary" role="button" tabindex="0" aria-label="View cart. 0 items in cart.">
+        🛒 Cart <span id="cart-count">0</span>
+    </div>
+
+    <div id="cart-modal" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title">
+        <div id="cart-content">
+            <h2 id="cart-title">Your Cart</h2>
+            <div id="cart-items" role="list" aria-live="polite">
+                <!-- Cart items will appear here -->
+            </div>
+            <div id="cart-total">Total: ₵0.00</div>
+
+            <!-- Phone Number Input -->
+             <div>
+                <label for="phone-number">Phone Number:</label>
+                <input type="text" id="phone-number" placeholder="Enter your phone number" aria-required="true" aria-label="Phone number input">
+             </div>
+
+            <div id="cart-buttons">
+                <button id="clear-cart" aria-label="Clear cart">Clear Cart</button>
+                <button id="order-cart" aria-label="Place order">Place Order</button>
+                <button id="close-cart" aria-label="Close cart">Close</button>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                        <h3>About Us</h3>
+                        <p>Arcade is your go-to place for delicious loaded fries and salads. We pride ourselves on using fresh ingredients and providing and excellent service.</p>
+                
+
+                    <div class="social-icons">
+                        <a href="https://wa.me/233554270879" target="_blank" aria-label="WhatsApp"><i class="fi fi-brands-whatsapp"></i></a>
+                        <a href="" aria-label="Instagram"><i class="fi fi-brands-instagram"></i></a>
+                        <a href="" aria-label="Tiktok"><i class="fi fi-brands-tik-tok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#menu"><i class="fi fi-tr-angle-double-small-right"></i>Menu</a></li>
+                        <li><a href=""><i class="fi fi-tr-angle-double-small-right"></i>Gallery</a></li>
+                        <li><a href=""><i class="fi fi-tr-angle-double-small-right"></i>About</a></li>
+                        <li><a href=""><i class="fi fi-tr-angle-double-small-right"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section contact">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fi fi-rs-marker"></i>
+                            <span>KNUST, St. Theresa's Hostel</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fi fi-rr-envelope"></i>
+                            <a href="mailto:agyeman.nana936@gmail.com">agyeman.nana936@gmail.com</a>
+                        </div>
+                    
+                        <div class="contact-item">
+                            <i class="fi fi-rr-phone-call"></i>
+                            <span><a href="tel:+233591133189">+233591133189</a></span>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Arcade. All Rights Reserved.</p>
+            </div>
+
+            <div class="footer-creator">
+                <img src="img/ka.jpg" alt="">
+                <p>Created by KhingAlpha</p>
+            </div>
+        </div>    
+    </footer>
+
+
+    <script src="arcade.js"></script> 
+</body>
+</html>

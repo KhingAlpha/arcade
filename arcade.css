@@ -605,7 +605,7 @@ hr {
 
 
 
-    @media only screen and (max-width: 600px) {
+    /* @media (max-width: 600px) {
       header h1 {
         font-size: 2.2rem;
       }
@@ -619,12 +619,12 @@ hr {
         width: 95vw;
         max-width: 400px;
       }
-    }
+    }*/
   
 
 
 /* Responsive styles for the hamburger menu */
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
       header h1 {
         font-size: 2.2rem;
       }
