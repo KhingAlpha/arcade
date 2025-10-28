@@ -668,7 +668,7 @@ hr {
     transition: transform 0.2s;
     display: flex;
     flex-direction: column;
-    margin-left: 100px;
+    margin-left: 40px;
     margin-right: 17px;
     margin-top: 30px;
     margin-bottom: 50px;
@@ -774,5 +774,6 @@ hr {
   .category-image {
     height: 250px;
   }
+
 
 }
