@@ -720,11 +720,15 @@ hr {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px; /* Adjust based on the header height */
+    top: 80px; /* Adjust based on the header height */
     right: 0;
+    left: 0;
     background-color: #801323;
-    width: 91.7%;
+    width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin: 0;
+    z-index: 99;
   }
 
   nav ul.active {
