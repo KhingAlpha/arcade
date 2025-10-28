@@ -177,6 +177,7 @@ hr {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 20px;
+    
 }
 
 .menu-item {
@@ -213,8 +214,8 @@ hr {
 .menu-item img {
     border-radius: 50%;
     width: 100%;
-    max-width: 300px;
-    height: auto;
+    max-width: 320px;
+    height: 280px;
     aspect-ratio: 1/1;
     object-fit: cover;
     flex-shrink: 0;
@@ -226,7 +227,7 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
+}s
 
 .item-name {
     font-weight: 600;
@@ -650,12 +651,14 @@ hr {
 
     /* Responsive styles for the hamburger menu */
 
-@media (max-width: 1200) {
+@media (max-width: 1200px) {
+  
 .lf {
     max-width: 10000px;
     margin: 10 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
   
   .menu-item {
@@ -667,30 +670,23 @@ hr {
     transition: transform 0.2s;
     display: flex;
     flex-direction: column;
-    margin-left: 17px;
-    margin-right: 17px;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-top: 30px;
     margin-bottom: 50px;
-    padding-left: 10px;
+    padding-left: 16px;
     padding-right: 10px;
     padding-top: 30px;
     overflow: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    /*height: 380px;*/    
-}
+    /*height: 380px;*/  
+  }  
 }
 
 
 
 @media (max-width: 600px) {
-.lf {
-    max-width: 10000px;
-    margin: 10 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-  
       header h1 {
         font-size: 2.2rem;
       }
@@ -704,6 +700,14 @@ hr {
         width: 95vw;
         max-width: 400px;
       }
+
+      .lf {
+    max-width: 10000px;
+    margin: 10 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
     }
 
 
@@ -781,8 +785,4 @@ hr {
     height: 250px;
   }
 
-
 }
-
-
-
