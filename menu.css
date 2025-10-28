@@ -653,7 +653,7 @@ hr {
 @media (max-width: 1200) {
 .lf {
     max-width: 10000px;
-    margin: 0 auto;
+    margin: 10 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
@@ -686,7 +686,7 @@ hr {
 @media (max-width: 600px) {
 .lf {
     max-width: 10000px;
-    margin: 0 auto;
+    margin: 10 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
@@ -783,5 +783,6 @@ hr {
 
 
 }
+
 
 
