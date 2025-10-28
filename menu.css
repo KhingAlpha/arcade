@@ -668,7 +668,7 @@ hr {
     transition: transform 0.2s;
     display: flex;
     flex-direction: column;
-    margin-left: 40px;
+    margin-left: 17px;
     margin-right: 17px;
     margin-top: 30px;
     margin-bottom: 50px;
@@ -777,3 +777,4 @@ hr {
 
 
 }
+
