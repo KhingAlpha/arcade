@@ -1,5 +1,19 @@
+// Hamburger menu - MUST be outside the cart IIFE
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", function() {
+      navLinks.classList.toggle("active");
+      console.log("Toggled! Classes:", navLinks.classList);
+    });
+  }
+});
+
+// Cart functionality
 (function () {
-  const MAX_PER_ITEM_SIZE = 20; // Default max if not set per size
+  const MAX_PER_ITEM_SIZE = 20;
   const cart = [];
   const cartSummary = document.getElementById("cart-summary");
   const cartCount = document.getElementById("cart-count");
@@ -9,8 +23,9 @@
   const clearCartBtn = document.getElementById("clear-cart");
   const closeCartBtn = document.getElementById("close-cart");
   const orderCartBtn = document.getElementById("order-cart");
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
+
+  // Only run cart code if cart elements exist
+  if (!cartSummary) return;
 
   function getSelectedExtrasInfo(menuItem) {
     const extrasCheckboxes = menuItem.querySelectorAll(
@@ -97,7 +112,9 @@
         }
       });
 
-      addToCartBtn.disabled = !anyAvailable;
+      if (addToCartBtn) {
+        addToCartBtn.disabled = !anyAvailable;
+      }
     });
   }
 
@@ -146,15 +163,14 @@
       nameSizeSpan.textContent = `${item.name} (${item.size})`;
       div.appendChild(nameSizeSpan);
 
-      // Display extras
       if (item.extrasNames && item.extrasNames.length > 0) {
         const extrasSpan = document.createElement("span");
         extrasSpan.style.marginLeft = "6px";
         extrasSpan.style.fontWeight = "500";
         if (item.extrasNames.length === 1) {
-          extrasSpan.textContent = item.extrasNames[0]; // Show the specific extra name
+          extrasSpan.textContent = item.extrasNames[0];
         } else {
-          extrasSpan.textContent = "Extras"; // Show "Extras" for multiple
+          extrasSpan.textContent = "Extras";
         }
         div.appendChild(extrasSpan);
       }
@@ -289,16 +305,13 @@
       return;
     }
 
-    // Get the phone number from the input field
     const phoneNumber = document.getElementById("phone-number").value.trim();
     if (!phoneNumber) {
       alert("Please enter your phone number.");
       return;
     }
     const recipient = "agyeman.nana936@gmail.com"; 
-    const subject = encodeURIComponent(
-      "New Order from Arcade"
-    );
+    const subject = encodeURIComponent("New Order from Arcade");
     let body = "Hello,%0D%0A%0D%0AI would like to place an order for the following items:%0D%0A%0D%0A";
 
     cart.forEach((item, index) => {
@@ -340,74 +353,83 @@
       });
     });
 
-    addToCartBtn.addEventListener("click", () => {
-      const selectedSizeInput = item.querySelector(
-        "input[type='radio']:checked"
-      );
-      if (!selectedSizeInput) {
-        alert("Please select a size before adding to cart.");
-        return;
+    if (addToCartBtn) {
+      addToCartBtn.addEventListener("click", () => {
+        const selectedSizeInput = item.querySelector(
+          "input[type='radio']:checked"
+        );
+        if (!selectedSizeInput) {
+          alert("Please select a size before adding to cart.");
+          return;
+        }
+        const size = selectedSizeInput.value;
+        const basePrice = parseFloat(selectedSizeInput.dataset.price);
+        const maxStockAttr = selectedSizeInput.getAttribute("data-maxstock");
+        const maxStock = maxStockAttr ? parseInt(maxStockAttr) : MAX_PER_ITEM_SIZE;
+        const { extrasPrice, extrasKey, extrasNames } = getSelectedExtrasInfo(item);
+        const totalItemPrice = basePrice + extrasPrice;
+        if (
+          addToCart(name, size, totalItemPrice, extrasPrice, extrasKey, extrasNames, maxStock)
+        ) {
+          alert(`Added ${name} (${size}) with extras to cart!`);
+        }
+      });
+    }
+  });
+
+  if (cartSummary) {
+    cartSummary.addEventListener("click", showCart);
+    cartSummary.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        showCart();
       }
-      const size = selectedSizeInput.value;
-      const basePrice = parseFloat(selectedSizeInput.dataset.price);
-      const maxStockAttr = selectedSizeInput.getAttribute("data-maxstock");
-      const maxStock = maxStockAttr ? parseInt(maxStockAttr) : MAX_PER_ITEM_SIZE;
-      const { extrasPrice, extrasKey, extrasNames } = getSelectedExtrasInfo(item);
-      const totalItemPrice = basePrice + extrasPrice;
-      if (
-        addToCart(name, size, totalItemPrice, extrasPrice, extrasKey, extrasNames, maxStock)
-      ) {
-        alert(`Added ${name} (${size}) with extras to cart!`);
-      }
-    });
-  });
-
-  cartSummary.addEventListener("click", showCart);
-  cartSummary.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      showCart();
-    }
-  });
-
-  closeCartBtn.addEventListener("click", hideCart);
-  clearCartBtn.addEventListener("click", () => {
-    if (confirm("Are you sure you want to clear the cart?")) {
-      clearCart();
-    }
-  });
-  orderCartBtn.addEventListener("click", orderCart);
-
-  cartModal.addEventListener("click", (e) => {
-    if (e.target === cartModal) {
-      hideCart();
-    }
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && cartModal.classList.contains("active")) {
-      hideCart();
-    }
-  });
-
-  if (hamburger && navLinks) {
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
     });
   }
+
+  if (closeCartBtn) closeCartBtn.addEventListener("click", hideCart);
+  if (clearCartBtn) {
+    clearCartBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to clear the cart?")) {
+        clearCart();
+      }
+    });
+  }
+  if (orderCartBtn) orderCartBtn.addEventListener("click", orderCart);
+
+  if (cartModal) {
+    cartModal.addEventListener("click", (e) => {
+      if (e.target === cartModal) {
+        hideCart();
+      }
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && cartModal && cartModal.classList.contains("active")) {
+      hideCart();
+    }
+  });
 
   updateStockAvailability();
   updateCartSummary();
 })();
 
-
-document.querySelectorAll('.view-btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                const href = this.getAttribute('onclick').match(/#[^']+/)[0];
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
+// Smooth scroll for view buttons
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.view-btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+      const href = this.getAttribute('onclick');
+      if (href && href.includes('#')) {
+        const match = href.match(/#[^']+/);
+        if (match) {
+          const target = document.querySelector(match[0]);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
+    });
+  });
+});
