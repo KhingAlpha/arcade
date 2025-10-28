@@ -651,8 +651,7 @@ hr {
     /* Responsive styles for the hamburger menu */
 
 @media (max-width: 1200) {
-  
-  .lf {
+.lf {
     max-width: 10000px;
     margin: 0 auto;
     display: grid;
@@ -685,6 +684,13 @@ hr {
 
 
 @media (max-width: 600px) {
+.lf {
+    max-width: 10000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+  
       header h1 {
         font-size: 2.2rem;
       }
@@ -777,4 +783,5 @@ hr {
 
 
 }
+
 
