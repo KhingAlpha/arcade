@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcade | Loaded Fries &amp; Salads</title>
-    <link rel="stylesheet" href="arcade.css">
+    <title>About | Arcade</title>
+    <link rel="stylesheet" href="menu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css">
@@ -15,6 +15,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
+    <style>
+        .about-wrap { max-width: 900px; margin: 0 auto; padding: 20px 20px 60px; }
+        .about-block { margin-bottom: 40px; }
+        .about-block h3 { color: var(--maroon); font-size: 1.5rem; margin-bottom: 10px; }
+        .about-block p { line-height: 1.7; color: #444; }
+    </style>
 </head>
 <body>
     <div class="header">
@@ -29,10 +35,10 @@
 
         <nav>
             <ul id="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.html" class="active">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -44,32 +50,28 @@
         </div>
     </div>
 
-    <div class="hero">
-        <p class="hero-tagline">KNUST's go-to fries &amp; salad spot</p>
-        <img src="img/arcade final logo-01.jpg" alt="Arcade loaded fries and salads">
-        <a href="menu.html"><button class="btn">View Menu</button></a>
-    </div>
+    <h2 class="category-title">About Arcade</h2>
+    <p class="category-subtitle">Who we are, and what goes into every plate.</p>
 
-    <div class="quick-info">
-        <div class="info-card">
-            <i class="fi fi-rr-phone-call"></i>
-            <h4>Orders &amp; Help</h4>
-            <a href="tel:+233554270879">+233 55 427 0879</a>
+    <div class="about-wrap">
+        <div class="about-block">
+            <h3>Our Story</h3>
+            <p>Arcade started as a simple idea: give KNUST students and staff a quick, reliable place to grab food that actually tastes like it was made with care. Every order is prepared fresh, close to campus, so you're never waiting long or settling for less.</p>
         </div>
-        <div class="info-card">
-            <i class="fi fi-brands-whatsapp"></i>
-            <h4>WhatsApp</h4>
-            <a href="https://wa.me/233554270879" target="_blank" rel="noopener">Chat / place an order</a>
+
+        <div class="about-block">
+            <h3>Our Loaded Fries</h3>
+            <p>Crispy on the outside, fluffy inside, and piled high with your choice of chicken, sausage, ham, or beef. We finish every plate with melted cheese and a signature sauce, and you can always add extra toppings if you want more.</p>
         </div>
-        <div class="info-card">
-            <i class="fi fi-rs-marker"></i>
-            <h4>Find Us</h4>
-            <p>KNUST, St. Theresa's Hostel</p>
+
+        <div class="about-block">
+            <h3>Our Salads</h3>
+            <p>Cut fresh daily, our salads range from a light veggie bowl to heartier options like the Chef's and Pittsburgh salad, built with real protein and a dressing that doesn't drown out the vegetables.</p>
         </div>
-        <div class="info-card">
-            <i class="fi fi-rr-credit-card"></i>
-            <h4>MoMo Payment</h4>
-            <p>Number coming soon</p>
+
+        <div class="about-block">
+            <h3>Where To Find Us</h3>
+            <p>We're based at KNUST, St. Theresa's Hostel. Reach out on WhatsApp or call ahead to place an order, and check our Menu page for full pricing.</p>
         </div>
     </div>
 

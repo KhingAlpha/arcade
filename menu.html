@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcade Menu</title>
-    <!--<link rel="stylesheet" href="arcade.css">-->
+    <title>Menu | Arcade</title>
     <link rel="stylesheet" href="menu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
@@ -23,27 +21,25 @@
 <body>
     <div class="header">
         <div class="logos">
-            <a href="index.html"><img class="ilogo" src="img/arcade logo and typo-05.png" alt=""></a>
+            <a href="index.html"><img class="ilogo" src="img/arcade logo and typo-05.png" alt="Arcade logo"></a>
+        </div>
+
+        <div class="contact-strip">
+            <a href="tel:+233554270879"><i class="fi fi-rr-phone-call"></i> Call / Order</a>
+            <a href="https://wa.me/233554270879" target="_blank" rel="noopener"><i class="fi fi-brands-whatsapp"></i> WhatsApp</a>
         </div>
 
         <nav>
             <ul id="nav-links">
-                <li>
-                    <a href="menu.html">Menu</a>
-                </li>
-                <li>
-                    <a href="">Gallery</a>
-                </li>
-                <li>
-                    <a href="">About</a>
-                </li>
-                <li>
-                    <a href="">Contact</a>
-                </li>
-            </ul>  
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
 
-        <div class="hamburger" id="hamburger">
+        <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">
             <div></div>
             <div></div>
             <div></div>
@@ -51,10 +47,21 @@
     </div>
 
 
-   <section id="menu" aria-label="Food menu">
+    <section id="menu" aria-label="Food menu">
         <h2 class="category-title">Arcade Menu</h2>
+        <p class="category-subtitle">Pick a category to see everything on offer, sizes, and prices.</p>
 
         <div class="category-section">
+            <!-- Fries Category Card -->
+            <div class="category-card">
+                <img src="img/chicken loaded/beef 1.jpg" alt="Fries" class="category-image">
+                <div class="category-content">
+                    <h2 class="category-min-title">Fries</h2>
+                    <p class="category-description">Classic crispy golden fries, seasoned and served plain or with your favourite dip. Simple, fast, and always fresh out of the fryer.</p>
+                    <button class="view-btn" onclick="window.location.href='fries.html'">View all Fries</button>
+                </div>
+            </div>
+
             <!-- Loaded Fries Category Card -->
             <div class="category-card">
                 <img src="img/chicken loaded/beef 1.jpg" alt="Loaded Fries" class="category-image">
@@ -70,39 +77,38 @@
                 <img src="img/salad/ghana-man salad.jpg" alt="Salad" class="category-image">
                 <div class="category-content">
                     <h2 class="category-min-title">Salads</h2>
-                    <p class="category-description">Fresh, vibrant salads prepared daily with crisp vegetables and your choice of protein. From our classic veggie to the hearty Pittsburgh salad, there's something for everyone.Fresh, vibrant salads prepared daily with crisp vegetables and your choice of protein. From our classic veggie to the hearty Pittsburgh salad, there's something for everyone.</p>
-                    <button class="view-btn" onclick="window.location.href='salads.html'">View all Loaded Fries</button>
+                    <p class="category-description">Fresh, vibrant salads prepared daily with crisp vegetables and your choice of protein. From our classic veggie to the hearty Pittsburgh salad, there's something for everyone.</p>
+                    <button class="view-btn" onclick="window.location.href='salads.html'">View all Salads</button>
                 </div>
             </div>
         </div>
-        
-   </section>
-        
 
-    
+    </section>
+
+
 
     <footer>
         <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-section about">
-                        <h3>About Us</h3>
-                        <p>Arcade is your go-to place for delicious loaded fries and salads. We pride ourselves on using fresh ingredients and providing and excellent service.</p>
-                
+                    <h3>About Us</h3>
+                    <p>Arcade is your go-to spot on campus for loaded fries and fresh salads, made to order with quality ingredients and quick, friendly service.</p>
 
                     <div class="social-icons">
-                        <a href="https://wa.me/233554270879" target="_blank" aria-label="WhatsApp"><i class="fi fi-brands-whatsapp"></i></a>
-                        <a href="" aria-label="Instagram"><i class="fi fi-brands-instagram"></i></a>
-                        <a href="" aria-label="Tiktok"><i class="fi fi-brands-tik-tok"></i></a>
+                        <a href="https://wa.me/233554270879" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fi fi-brands-whatsapp"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fi fi-brands-instagram"></i></a>
+                        <a href="#" aria-label="Tiktok"><i class="fi fi-brands-tik-tok"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-section links">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
+                        <li><a href="index.html"><i class="fi fi-tr-angle-double-small-right"></i>Home</a></li>
                         <li><a href="menu.html"><i class="fi fi-tr-angle-double-small-right"></i>Menu</a></li>
-                        <li><a href=""><i class="fi fi-tr-angle-double-small-right"></i>Gallery</a></li>
-                        <li><a href=""><i class="fi fi-tr-angle-double-small-right"></i>About</a></li>
-                        <li><a href=""><i class="fi fi-tr-angle-double-small-right"></i>Contact</a></li>
+                        <li><a href="gallery.html"><i class="fi fi-tr-angle-double-small-right"></i>Gallery</a></li>
+                        <li><a href="about.html"><i class="fi fi-tr-angle-double-small-right"></i>About</a></li>
+                        <li><a href="contact.html"><i class="fi fi-tr-angle-double-small-right"></i>Contact</a></li>
                     </ul>
                 </div>
 
@@ -117,33 +123,26 @@
                             <i class="fi fi-rr-envelope"></i>
                             <a href="mailto:arcade.ww12@gmail.com">arcade.ww12@gmail.com</a>
                         </div>
-                    
                         <div class="contact-item">
                             <i class="fi fi-rr-phone-call"></i>
-                            <span><a href="tel:+233554270879">+233554270879</a></span>
+                            <a href="tel:+233554270879">+233 55 427 0879</a>
                         </div>
-                    </div>  
+                    </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Arcade. All Rights Reserved.</p>
+                <p>&copy; 2026 Arcade. All Rights Reserved.</p>
+                <div class="footer-creator">
+                    <img src="img/ka.jpg" alt="">
+                    <p>Created by ANYO</p>
+                </div>
             </div>
-
-            <div class="footer-creator">
-                <img src="img/ka.jpg" alt="">
-                <p>Created by ANYO</p>
-            </div>
-        </div>    
+        </div>
     </footer>
-    
 
-    
-    <script src="arcade.js"></script> 
+
+
+    <script src="arcade.js"></script>
 </body>
 </html>
-
-
-
-
-    

@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loaded Fries | Arcade</title>
-    <!--<link rel="stylesheet" href="arcade.css">-->
     <link rel="stylesheet" href="menu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
@@ -21,42 +19,41 @@
 <body>
     <div class="header">
         <div class="logos">
-            <a href="index.html"><img class="ilogo" src="img/arcade logo and typo-05.png" alt=""></a>
+            <a href="index.html"><img class="ilogo" src="img/arcade logo and typo-05.png" alt="Arcade logo"></a>
+        </div>
+
+        <div class="contact-strip">
+            <a href="tel:+233554270879"><i class="fi fi-rr-phone-call"></i> Call / Order</a>
+            <a href="https://wa.me/233554270879" target="_blank" rel="noopener"><i class="fi fi-brands-whatsapp"></i> WhatsApp</a>
         </div>
 
         <nav>
             <ul id="nav-links">
-                <li>
-                    <a href="menu.html">Menu</a>
-                </li>
-                <li>
-                    <a href="">Gallery</a>
-                </li>
-                <li>
-                    <a href="">About</a>
-                </li>
-                <li>
-                    <a href="">Contact</a>
-                </li>
-            </ul>  
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
 
-        <div class="hamburger" id="hamburger">
+        <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">
             <div></div>
             <div></div>
             <div></div>
         </div>
     </div>
-    
+
     <div>
         <h3 class="meal-type">Loaded Fries</h3>
-        <!-- <hr> -->
+        <p class="meal-subtitle">Tap a card to see sizes, extras, and prices.</p>
         <div class="lf">
             <div class="menu-item" data-name="Chicken Loaded fries">
                 <img src="img/chicken loaded/chicken 1.jpg" alt="">
                 <div class="item-info">
                         <h3 class="item-name">Chicken Loaded Fries</h3>
-                        <p class="item-description">Fries loaded with chicken with cheese and all that</p>
+                        <p class="item-description">Crispy fries topped with grilled chicken, melted cheese, and our house sauce.</p>
+                        <p class="tap-hint">Tap for sizes &amp; price</p>
                 </div>
                 <div class="size-options" role="radiogroup" aria-label="Select size for Chicken Loaded Fries">
                     <input type="radio" id="chicken-loaded-fries-small" name="size-chicken-loaded-fries" value="Small" data-price="70.00" data-maxstock="20" checked />
@@ -70,8 +67,7 @@
 
                     <div class="item-price">₵70.00</div>
 
-                    <!-- Extras options added here -->
-                    <div class="extras-note" style="font-size: 12px; color: #666; margin-top:5px;">
+                    <div class="extras-note">
                         * To change extras on an item already in cart, please remove the item from cart and add again with new extras.
                     </div>
 
@@ -95,7 +91,8 @@
                 <img src="img/chicken loaded/sausage 1.jpg" alt="">
                 <div class="item-info">
                     <h3 class="item-name">Sausage Loaded Fries</h3>
-                    <p class="item-description">Fries loaded with sausage with cheese and all that</p>
+                    <p class="item-description">Golden fries piled with sliced sausage, cheese, and a smoky sauce drizzle.</p>
+                    <p class="tap-hint">Tap for sizes &amp; price</p>
                 </div>
                 <div class="size-options" role="radiogroup" aria-label="Select size for Sausage Loaded Fries">
                     <input type="radio" id="sausage-loaded-fries-small" name="size-sausage-loaded-fries" value="Small" data-price="65.00" data-maxstock="20" checked />
@@ -109,8 +106,7 @@
 
                     <div class="item-price">₵65.00</div>
 
-                        <!-- Extras options added here -->
-                    <div class="extras-note" style="font-size: 12px; color: #666; margin-top:5px;">
+                    <div class="extras-note">
                         * To change extras on an item already in cart, please remove the item from cart and add again with new extras.
                     </div>
 
@@ -128,12 +124,14 @@
 
                         <button class="add-to-cart">Add to Cart</button>
                 </div>
-            </div>  
+            </div>
 
             <div class="menu-item" data-name="Ham Loaded fries">
                 <img src="img/chicken loaded/ham.jpg" alt="">
                 <div class="item-info">
-                    <h3 class="item-name">Ham Loaded Fries</h3>                        <p class="item-description">Fries loaded with ham with cheese and all that</p>
+                    <h3 class="item-name">Ham Loaded Fries</h3>
+                    <p class="item-description">Fries layered with savoury ham, melted cheese, and a tangy sauce.</p>
+                    <p class="tap-hint">Tap for sizes &amp; price</p>
                 </div>
                 <div class="size-options" role="radiogroup" aria-label="Select size for Ham Loaded Fries">
                         <input type="radio" id="ham-loaded-fries-small" name="size-ham-loaded-fries" value="Small" data-price="75.00" data-maxstock="20" checked />
@@ -147,9 +145,7 @@
 
                         <div class="item-price">₵75.00</div>
 
-
-                        <!-- Extras options added here -->
-                        <div class="extras-note" style="font-size: 12px; color: #666; margin-top:5px;">
+                        <div class="extras-note">
                             * To change extras on an item already in cart, please remove the item from cart and add again with new extras.
                         </div>
 
@@ -165,16 +161,16 @@
                             </label>
                         </div>
 
-
                         <button class="add-to-cart">Add to Cart</button>
                     </div>
-                </div>  
+                </div>
 
                 <div class="menu-item" data-name="Beef Loaded fries">
                     <img src="img/chicken loaded/beef.jpg" alt="">
                     <div class="item-info">
                         <h3 class="item-name">Beef Loaded Fries</h3>
-                        <p class="item-description">Fries loaded with beef with cheese and all that</p>
+                        <p class="item-description">Seasoned beef strips over crispy fries, finished with melted cheese.</p>
+                        <p class="tap-hint">Tap for sizes &amp; price</p>
                     </div>
                     <div class="size-options" role="radiogroup" aria-label="Select size for Beef Loaded Fries">
                         <input type="radio" id="beef-loaded-fries-small" name="size-beef-loaded-fries" value="Small" data-price="75.00" data-maxstock="20" checked />
@@ -188,9 +184,7 @@
 
                         <div class="item-price">₵75.00</div>
 
-
-                        <!-- Extras options added here -->
-                        <div class="extras-note" style="font-size: 12px; color: #666; margin-top:5px;">
+                        <div class="extras-note">
                             * To change extras on an item already in cart, please remove the item from cart and add again with new extras.
                         </div>
 
@@ -206,16 +200,16 @@
                             </label>
                         </div>
 
-
                         <button class="add-to-cart">Add to Cart</button>
                     </div>
-                </div>  
+                </div>
 
                 <div class="menu-item" data-name="Fullhouse Loaded fries">
                     <img src="img/chicken loaded/full house.jpg" alt="">
                     <div class="item-info">
                         <h3 class="item-name">Fullhouse Loaded Fries</h3>
-                        <p class="item-description">Fries loaded with chicken, sausage, ham, beef and cheese</p>
+                        <p class="item-description">The works: chicken, sausage, ham, and beef piled high with melted cheese.</p>
+                        <p class="tap-hint">Tap for sizes &amp; price</p>
                     </div>
                     <div class="size-options" role="radiogroup" aria-label="Select size for Fullhouse Loaded Fries">
                         <input type="radio" id="fullhouse-loaded-fries-small" name="size-fullhouse-loaded-fries" value="Small" data-price="80.00" data-maxstock="20" checked />
@@ -227,18 +221,16 @@
                         <input type="radio" id="fullhouse-loaded-fries-large" name="size-fullhouse-loaded-fries" value="Large" data-price="155.00" data-maxstock="20" />
                         <label class="size-option-label" for="fullhouse-loaded-fries-large">Large (₵155.00)</label>
 
-                        <div class="item-price">₵155.00</div>
+                        <div class="item-price">₵80.00</div>
 
-
-                        <!-- Extras options added here -->
-                        <div class="extras-note" style="font-size: 12px; color: #666; margin-top:5px;">
+                        <div class="extras-note">
                             * To change extras on an item already in cart, please remove the item from cart and add again with new extras.
                         </div>
 
                         <div class="extras-options" aria-label="Extras options">
-                            <label for="extra-fullhouse   (chicken, sausage, ham, beef)">
-                                <input type="checkbox" id="extra-fullhouse   (chicken, sausage, ham, beef)" data-price="25.00">
-                                Extra Fullhouse(chicken, sausage, ham, beef) (₵25.00)
+                            <label for="extra-fullhouse">
+                                <input type="checkbox" id="extra-fullhouse" data-price="25.00">
+                                Extra Fullhouse (chicken, sausage, ham, beef) (₵25.00)
                             </label>
 
                             <label for="extra-cheese">
@@ -247,10 +239,9 @@
                             </label>
                         </div>
 
-
                         <button class="add-to-cart">Add to Cart</button>
                     </div>
-                </div>  
+                </div>
 
             </div>
         </div>
@@ -287,23 +278,24 @@
             <div class="footer-content">
                 <div class="footer-section about">
                         <h3>About Us</h3>
-                        <p>Arcade is your go-to place for delicious loaded fries and salads. We pride ourselves on using fresh ingredients and providing and excellent service.</p>
-                
+                        <p>Arcade is your go-to spot on campus for loaded fries and fresh salads, made to order with quality ingredients and quick, friendly service.</p>
+
 
                     <div class="social-icons">
-                        <a href="https://wa.me/233554270879" target="_blank" aria-label="WhatsApp"><i class="fi fi-brands-whatsapp"></i></a>
-                        <a href="" aria-label="Instagram"><i class="fi fi-brands-instagram"></i></a>
-                        <a href="" aria-label="Tiktok"><i class="fi fi-brands-tik-tok"></i></a>
+                        <a href="https://wa.me/233554270879" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fi fi-brands-whatsapp"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fi fi-brands-instagram"></i></a>
+                        <a href="#" aria-label="Tiktok"><i class="fi fi-brands-tik-tok"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-section links">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
+                        <li><a href="index.html"><i class="fi fi-tr-angle-double-small-right"></i>Home</a></li>
                         <li><a href="menu.html"><i class="fi fi-tr-angle-double-small-right"></i>Menu</a></li>
-                        <li><a href=""><i class="fi fi-tr-angle-double-small-right"></i>Gallery</a></li>
-                        <li><a href=""><i class="fi fi-tr-angle-double-small-right"></i>About</a></li>
-                        <li><a href=""><i class="fi fi-tr-angle-double-small-right"></i>Contact</a></li>
+                        <li><a href="gallery.html"><i class="fi fi-tr-angle-double-small-right"></i>Gallery</a></li>
+                        <li><a href="about.html"><i class="fi fi-tr-angle-double-small-right"></i>About</a></li>
+                        <li><a href="contact.html"><i class="fi fi-tr-angle-double-small-right"></i>Contact</a></li>
                     </ul>
                 </div>
 
@@ -318,28 +310,27 @@
                             <i class="fi fi-rr-envelope"></i>
                             <a href="mailto:arcade.ww12@gmail.com">arcade.ww12@gmail.com</a>
                         </div>
-                    
+
                         <div class="contact-item">
                             <i class="fi fi-rr-phone-call"></i>
-                            <span><a href="tel:+233554270879">+233554270879</a></span>
+                            <a href="tel:+233554270879">+233 55 427 0879</a>
                         </div>
-                    </div>  
+                    </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Arcade. All Rights Reserved.</p>
+                <p>&copy; 2026 Arcade. All Rights Reserved.</p>
+                <div class="footer-creator">
+                    <img src="img/ka.jpg" alt="">
+                    <p>Created by ANYO</p>
+                </div>
             </div>
-
-            <div class="footer-creator">
-                <img src="img/ka.jpg" alt="">
-                <p>Created by ANYO</p>
-            </div>
-        </div>    
+        </div>
     </footer>
 
 
 
-    <script src="arcade.js"></script> 
+    <script src="arcade.js"></script>
 </body>
 </html>

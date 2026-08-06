@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Arcade</title>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <style>
+        .contact-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 20px 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .contact-card {
+            background: white;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            padding: 26px;
+        }
+        .contact-card h3 {
+            color: var(--maroon);
+            margin-top: 0;
+        }
+        .contact-card p.note {
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: -4px;
+        }
+        .contact-card label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin: 12px 0 6px;
+            color: var(--charcoal);
+        }
+        .contact-card input,
+        .contact-card textarea,
+        .contact-card select {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+        }
+        .contact-card textarea { resize: vertical; min-height: 90px; }
+        .star-rating {
+            display: flex;
+            gap: 6px;
+            font-size: 1.6rem;
+            margin-top: 6px;
+        }
+        .star-rating span {
+            cursor: pointer;
+            color: #ccc;
+            transition: color 0.15s;
+        }
+        .star-rating span.selected,
+        .star-rating span:hover,
+        .star-rating span:hover ~ span {
+            color: var(--gold);
+        }
+        .contact-card button.submit-btn {
+            margin-top: 16px;
+            background-color: var(--maroon);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+        }
+        .contact-card button.submit-btn:hover {
+            background-color: var(--maroon-dark);
+        }
+        .direct-info {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 10px;
+        }
+        .direct-info .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--charcoal);
+        }
+        .direct-info .contact-item i { color: var(--maroon); }
+        .direct-info a { color: var(--charcoal); text-decoration: none; }
+        .direct-info a:hover { color: var(--maroon); }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logos">
+            <a href="index.html"><img class="ilogo" src="img/arcade logo and typo-05.png" alt="Arcade logo"></a>
+        </div>
+
+        <div class="contact-strip">
+            <a href="tel:+233554270879"><i class="fi fi-rr-phone-call"></i> Call / Order</a>
+            <a href="https://wa.me/233554270879" target="_blank" rel="noopener"><i class="fi fi-brands-whatsapp"></i> WhatsApp</a>
+        </div>
+
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <h2 class="category-title">Get In Touch</h2>
+    <p class="category-subtitle">Reach us directly, leave a review, or tell us what you'd like to see on the menu.</p>
+
+    <div class="contact-wrap">
+        <!-- Direct contact -->
+        <div class="contact-card">
+            <h3>Reach Us Directly</h3>
+            <div class="direct-info">
+                <div class="contact-item"><i class="fi fi-rs-marker"></i><span>KNUST, St. Theresa's Hostel</span></div>
+                <div class="contact-item"><i class="fi fi-rr-phone-call"></i><a href="tel:+233554270879">+233 55 427 0879</a></div>
+                <div class="contact-item"><i class="fi fi-brands-whatsapp"></i><a href="https://wa.me/233554270879" target="_blank" rel="noopener">WhatsApp us</a></div>
+                <div class="contact-item"><i class="fi fi-rr-envelope"></i><a href="mailto:arcade.ww12@gmail.com">arcade.ww12@gmail.com</a></div>
+                <div class="contact-item"><i class="fi fi-brands-instagram"></i><a href="#">Instagram (add handle)</a></div>
+                <div class="contact-item"><i class="fi fi-brands-tik-tok"></i><a href="#">TikTok (add handle)</a></div>
+            </div>
+        </div>
+
+        <!-- Review form -->
+        <div class="contact-card">
+            <h3>Leave a Review</h3>
+            <p class="note">Sends straight to our inbox for now. Public star ratings on the site are coming once the backend is connected.</p>
+            <form id="review-form">
+                <label for="review-name">Your Name</label>
+                <input type="text" id="review-name" required>
+
+                <label>Rating</label>
+                <div class="star-rating" id="star-rating" role="radiogroup" aria-label="Star rating">
+                    <span data-value="1">&#9733;</span>
+                    <span data-value="2">&#9733;</span>
+                    <span data-value="3">&#9733;</span>
+                    <span data-value="4">&#9733;</span>
+                    <span data-value="5">&#9733;</span>
+                </div>
+                <input type="hidden" id="review-rating" value="0">
+
+                <label for="review-text">Your Review</label>
+                <textarea id="review-text" required placeholder="What did you order? How was it?"></textarea>
+
+                <button type="submit" class="submit-btn">Send Review</button>
+            </form>
+        </div>
+
+        <!-- Menu suggestion form -->
+        <div class="contact-card">
+            <h3>Suggest a Menu Item</h3>
+            <p class="note">Popular suggestions may go up as a poll so other customers can vote on them.</p>
+            <form id="suggestion-form">
+                <label for="suggest-name">Your Name (optional)</label>
+                <input type="text" id="suggest-name">
+
+                <label for="suggest-item">What would you like to see?</label>
+                <input type="text" id="suggest-item" required placeholder="e.g. Jollof loaded fries">
+
+                <label for="suggest-details">Any details?</label>
+                <textarea id="suggest-details" placeholder="Toppings, flavour ideas, etc."></textarea>
+
+                <button type="submit" class="submit-btn">Send Suggestion</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>Arcade is your go-to spot on campus for loaded fries and fresh salads, made to order with quality ingredients and quick, friendly service.</p>
+
+                    <div class="social-icons">
+                        <a href="https://wa.me/233554270879" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fi fi-brands-whatsapp"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fi fi-brands-instagram"></i></a>
+                        <a href="#" aria-label="Tiktok"><i class="fi fi-brands-tik-tok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fi fi-tr-angle-double-small-right"></i>Home</a></li>
+                        <li><a href="menu.html"><i class="fi fi-tr-angle-double-small-right"></i>Menu</a></li>
+                        <li><a href="gallery.html"><i class="fi fi-tr-angle-double-small-right"></i>Gallery</a></li>
+                        <li><a href="about.html"><i class="fi fi-tr-angle-double-small-right"></i>About</a></li>
+                        <li><a href="contact.html"><i class="fi fi-tr-angle-double-small-right"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section contact">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fi fi-rs-marker"></i>
+                            <span>KNUST, St. Theresa's Hostel</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fi fi-rr-envelope"></i>
+                            <a href="mailto:arcade.ww12@gmail.com">arcade.ww12@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fi fi-rr-phone-call"></i>
+                            <a href="tel:+233554270879">+233 55 427 0879</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Arcade. All Rights Reserved.</p>
+                <div class="footer-creator">
+                    <img src="img/ka.jpg" alt="">
+                    <p>Created by ANYO</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="arcade.js"></script>
+    <script>
+        // Star rating widget
+        const stars = document.querySelectorAll('#star-rating span');
+        const ratingInput = document.getElementById('review-rating');
+        stars.forEach((star) => {
+            star.addEventListener('click', () => {
+                const value = parseInt(star.dataset.value);
+                ratingInput.value = value;
+                stars.forEach((s) => {
+                    s.classList.toggle('selected', parseInt(s.dataset.value) <= value);
+                });
+            });
+        });
+
+        // Review form -> mailto (temporary, until the backend is connected)
+        document.getElementById('review-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('review-name').value.trim();
+            const rating = ratingInput.value;
+            const text = document.getElementById('review-text').value.trim();
+            const subject = encodeURIComponent('New Review from Arcade website');
+            const body = encodeURIComponent(
+                `Name: ${name}\nRating: ${rating}/5\nReview: ${text}`
+            );
+            window.location.href = `mailto:arcade.ww12@gmail.com?subject=${subject}&body=${body}`;
+        });
+
+        // Suggestion form -> mailto (temporary, until the backend is connected)
+        document.getElementById('suggestion-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('suggest-name').value.trim() || 'Anonymous';
+            const item = document.getElementById('suggest-item').value.trim();
+            const details = document.getElementById('suggest-details').value.trim();
+            const subject = encodeURIComponent('New Menu Suggestion from Arcade website');
+            const body = encodeURIComponent(
+                `Name: ${name}\nSuggested item: ${item}\nDetails: ${details}`
+            );
+            window.location.href = `mailto:arcade.ww12@gmail.com?subject=${subject}&body=${body}`;
+        });
+    </script>
+</body>
+</html>

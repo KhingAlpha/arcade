@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fries | Arcade</title>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+    <div class="header">
+        <div class="logos">
+            <a href="index.html"><img class="ilogo" src="img/arcade logo and typo-05.png" alt="Arcade logo"></a>
+        </div>
+
+        <div class="contact-strip">
+            <a href="tel:+233554270879"><i class="fi fi-rr-phone-call"></i> Call / Order</a>
+            <a href="https://wa.me/233554270879" target="_blank" rel="noopener"><i class="fi fi-brands-whatsapp"></i> WhatsApp</a>
+        </div>
+
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div>
+        <h3 class="meal-type">Fries</h3>
+        <p class="meal-subtitle">Tap a card to see sizes, prices, and add it to your cart. Prices and items below are placeholders &mdash; swap them for your real menu.</p>
+        <div class="lf">
+            <div class="menu-item" data-name="Plain Fries">
+                <img src="img/fries/plain.jpg" alt="">
+                <div class="item-info">
+                    <h3 class="item-name">Plain Fries</h3>
+                    <p class="item-description">Crispy golden fries, lightly salted.</p>
+                    <p class="tap-hint">Tap for sizes &amp; price</p>
+                </div>
+                <div class="size-options" role="radiogroup" aria-label="Select size for Plain Fries">
+                    <input type="radio" id="plain-fries-small" name="size-plain-fries" value="Small" data-price="20.00" data-maxstock="20" checked />
+                    <label class="size-option-label" for="plain-fries-small">Small (₵20.00)</label>
+
+                    <input type="radio" id="plain-fries-medium" name="size-plain-fries" value="Medium" data-price="30.00" data-maxstock="20" />
+                    <label class="size-option-label" for="plain-fries-medium">Medium (₵30.00)</label>
+
+                    <input type="radio" id="plain-fries-large" name="size-plain-fries" value="Large" data-price="40.00" data-maxstock="20" />
+                    <label class="size-option-label" for="plain-fries-large">Large (₵40.00)</label>
+
+                    <div class="item-price">₵20.00</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="menu-item" data-name="Seasoned Fries">
+                <img src="img/fries/seasoned.jpg" alt="">
+                <div class="item-info">
+                    <h3 class="item-name">Seasoned Fries</h3>
+                    <p class="item-description">Fries tossed in our house seasoning blend.</p>
+                    <p class="tap-hint">Tap for sizes &amp; price</p>
+                </div>
+                <div class="size-options" role="radiogroup" aria-label="Select size for Seasoned Fries">
+                    <input type="radio" id="seasoned-fries-small" name="size-seasoned-fries" value="Small" data-price="25.00" data-maxstock="20" checked />
+                    <label class="size-option-label" for="seasoned-fries-small">Small (₵25.00)</label>
+
+                    <input type="radio" id="seasoned-fries-medium" name="size-seasoned-fries" value="Medium" data-price="35.00" data-maxstock="20" />
+                    <label class="size-option-label" for="seasoned-fries-medium">Medium (₵35.00)</label>
+
+                    <input type="radio" id="seasoned-fries-large" name="size-seasoned-fries" value="Large" data-price="45.00" data-maxstock="20" />
+                    <label class="size-option-label" for="seasoned-fries-large">Large (₵45.00)</label>
+
+                    <div class="item-price">₵25.00</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="menu-item" data-name="Cheese Fries">
+                <img src="img/fries/cheese.jpg" alt="">
+                <div class="item-info">
+                    <h3 class="item-name">Cheese Fries</h3>
+                    <p class="item-description">Crispy fries smothered in melted cheese.</p>
+                    <p class="tap-hint">Tap for sizes &amp; price</p>
+                </div>
+                <div class="size-options" role="radiogroup" aria-label="Select size for Cheese Fries">
+                    <input type="radio" id="cheese-fries-small" name="size-cheese-fries" value="Small" data-price="35.00" data-maxstock="20" checked />
+                    <label class="size-option-label" for="cheese-fries-small">Small (₵35.00)</label>
+
+                    <input type="radio" id="cheese-fries-medium" name="size-cheese-fries" value="Medium" data-price="45.00" data-maxstock="20" />
+                    <label class="size-option-label" for="cheese-fries-medium">Medium (₵45.00)</label>
+
+                    <input type="radio" id="cheese-fries-large" name="size-cheese-fries" value="Large" data-price="55.00" data-maxstock="20" />
+                    <label class="size-option-label" for="cheese-fries-large">Large (₵55.00)</label>
+
+                    <div class="item-price">₵35.00</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-summary" role="button" tabindex="0" aria-label="View cart. 0 items in cart.">
+        🛒 Cart <span id="cart-count">0</span>
+    </div>
+
+    <div id="cart-modal" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title">
+        <div id="cart-content">
+            <h2 id="cart-title">Your Cart</h2>
+            <div id="cart-items" role="list" aria-live="polite">
+                <!-- Cart items will appear here -->
+            </div>
+            <div id="cart-total">Total: ₵0.00</div>
+
+            <div>
+                <label for="phone-number">Phone Number:</label>
+                <input type="text" id="phone-number" placeholder="Enter your phone number" aria-required="true" aria-label="Phone number input">
+            </div>
+
+            <div id="cart-buttons">
+                <button id="clear-cart" aria-label="Clear cart">Clear Cart</button>
+                <button id="order-cart" aria-label="Place order">Place Order</button>
+                <button id="close-cart" aria-label="Close cart">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>Arcade is your go-to spot on campus for loaded fries and fresh salads, made to order with quality ingredients and quick, friendly service.</p>
+
+                    <div class="social-icons">
+                        <a href="https://wa.me/233554270879" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fi fi-brands-whatsapp"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fi fi-brands-instagram"></i></a>
+                        <a href="#" aria-label="Tiktok"><i class="fi fi-brands-tik-tok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fi fi-tr-angle-double-small-right"></i>Home</a></li>
+                        <li><a href="menu.html"><i class="fi fi-tr-angle-double-small-right"></i>Menu</a></li>
+                        <li><a href="gallery.html"><i class="fi fi-tr-angle-double-small-right"></i>Gallery</a></li>
+                        <li><a href="about.html"><i class="fi fi-tr-angle-double-small-right"></i>About</a></li>
+                        <li><a href="contact.html"><i class="fi fi-tr-angle-double-small-right"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section contact">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fi fi-rs-marker"></i>
+                            <span>KNUST, St. Theresa's Hostel</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fi fi-rr-envelope"></i>
+                            <a href="mailto:arcade.ww12@gmail.com">arcade.ww12@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fi fi-rr-phone-call"></i>
+                            <a href="tel:+233554270879">+233 55 427 0879</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Arcade. All Rights Reserved.</p>
+                <div class="footer-creator">
+                    <img src="img/ka.jpg" alt="">
+                    <p>Created by ANYO</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="arcade.js"></script>
+</body>
+</html>

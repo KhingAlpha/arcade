@@ -5,10 +5,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (hamburger && navLinks) {
     hamburger.addEventListener("click", function() {
-      navLinks.classList.toggle("active");
-      console.log("Toggled! Classes:", navLinks.classList);
+      const isOpen = navLinks.classList.toggle("active");
+      hamburger.classList.toggle("active", isOpen);
+      hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
   }
+});
+
+// Tap-to-open circular menu cards: tapping a card (outside its interactive
+// controls) reveals the size/price/add-to-cart panel underneath.
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.menu-item').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      // Don't toggle when the click originated from an interactive control
+      // inside the already-open panel (radio, checkbox, label, button).
+      if (e.target.closest('.size-options')) return;
+      document.querySelectorAll('.menu-item.open').forEach((other) => {
+        if (other !== card) other.classList.remove('open');
+      });
+      card.classList.toggle('open');
+    });
+  });
 });
 
 // Cart functionality
