@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Arcade</title>
+    <title>Appetizers | Arcade</title>
     <link rel="stylesheet" href="menu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +15,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
-    <style>
-        .about-wrap { max-width: 900px; margin: 0 auto; padding: 20px 20px 60px; }
-        .about-block { margin-bottom: 40px; }
-        .about-block h3 { color: var(--maroon); font-size: 1.5rem; margin-bottom: 10px; }
-        .about-block p { line-height: 1.7; color: #444; }
-    </style>
 </head>
 <body>
     <div class="header">
@@ -36,9 +30,9 @@
         <nav>
             <ul id="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -50,28 +44,91 @@
         </div>
     </div>
 
-    <h2 class="category-title">About Arcade</h2>
-    <p class="category-subtitle">Who we are, and what goes into every plate.</p>
+    <div class="meal-type-wrap">
+        <h3 class="meal-type">Appetizers</h3>
+        <p class="meal-subtitle">Small bites to start things off. Tap a card to see pricing.</p>
+        <p class="breadcrumb-back"><a href="menu.html">&larr; Back to full menu</a></p>
+    </div>
 
-    <div class="about-wrap">
-        <div class="about-block">
-            <h3>Our Story</h3>
-            <p>Arcade started as a simple idea: give KNUST students and staff a quick, reliable place to grab food that actually tastes like it was made with care. Every order is prepared fresh, close to campus, so you're never waiting long or settling for less.</p>
+    <!--
+      IMAGES: each card below points to img/<category>/<item>.jpg
+      Drop your real photos into those folders using the same filenames
+      (or update the src="" paths here) and they will show automatically.
+    -->
+
+    <div class="menu-section">
+        <div class="lf">
+
+            <div class="menu-item" data-name="Spring Rolls">
+                <img src="img/appetizers/spring-rolls.jpg" alt="Spring Rolls">
+                <div class="item-info">
+                    <h3 class="item-name">Spring Rolls</h3>
+                    <p class="item-description">Crispy golden spring rolls, pick your style.</p>
+                    <p class="tap-hint">Tap for flavours &amp; price</p>
+                </div>
+                <div class="size-options" role="radiogroup" aria-label="Select flavour for Spring Rolls">
+                    <p class="option-group-label">Flavour</p>
+                        <input type="radio" id="spring-rolls-regular" class="size-radio" name="size-spring-rolls" value="Regular" data-maxstock="20" checked />
+                        <label class="size-option-label" for="spring-rolls-regular">Regular <span class="price-tbd-tag">(Price TBD)</span></label>
+                        <input type="radio" id="spring-rolls-cheesy" class="size-radio" name="size-spring-rolls" value="Cheesy" data-maxstock="20" />
+                        <label class="size-option-label" for="spring-rolls-cheesy">Cheesy <span class="price-tbd-tag">(Price TBD)</span></label>
+
+                    <div class="item-price">Price coming soon</div>
+
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="menu-item" data-name="Kosua ne Mako">
+                <img src="img/appetizers/kosua-ne-mako.jpg" alt="Kosua ne Mako">
+                <div class="item-info">
+                    <h3 class="item-name">Kosua ne Mako</h3>
+                    <p class="item-description">Boiled eggs with spiced pepper sauce, a Ghanaian favourite.</p>
+                    <p class="tap-hint">Tap for price</p>
+                </div>
+                <div class="size-options" role="radiogroup" aria-label="Kosua ne Mako price">
+                    <input type="radio" id="kosua-ne-mako-only" class="size-radio" name="size-kosua-ne-mako" value="Regular" data-maxstock="20" checked />
+                    <div class="item-price">Price coming soon</div>
+
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
         </div>
+    </div>
 
-        <div class="about-block">
-            <h3>Our Mains</h3>
-            <p>Loaded fries, loaded mac, fries &amp; chicken tenders, jollof, and rice pilaf &mdash; hearty plates built to order, with your choice of toppings and extras.</p>
-        </div>
+    <div id="cart-summary" role="button" tabindex="0" aria-label="View cart. 0 items in cart.">
+        🛒 Cart <span id="cart-count">0</span>
+    </div>
 
-        <div class="about-block">
-            <h3>Beverages &amp; Desserts</h3>
-            <p>Fresh juice and ice-cold classics to wash it down, plus something sweet to finish &mdash; from yoghurt parfait to cake and ice cream.</p>
-        </div>
+    <div id="cart-modal" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title">
+        <div id="cart-content">
+            <h2 id="cart-title">Your Cart</h2>
+            <div id="cart-items" role="list" aria-live="polite">
+            </div>
+            <div id="cart-total">Total: ₵0.00</div>
 
-        <div class="about-block">
-            <h3>Where To Find Us</h3>
-            <p>We're based at KNUST, St. Theresa's Hostel. Reach out on WhatsApp or call ahead to place an order, and check our Menu page for full pricing.</p>
+            <div>
+                <label for="phone-number">Phone Number:</label>
+                <input type="text" id="phone-number" placeholder="Enter your phone number" aria-required="true" aria-label="Phone number input">
+            </div>
+
+            <div class="fulfillment-select" role="radiogroup" aria-label="Pickup or delivery">
+                <label><input type="radio" name="fulfillment" value="pickup" checked> Pickup</label>
+                <label><input type="radio" name="fulfillment" value="delivery"> Delivery</label>
+            </div>
+            <div id="delivery-fields" style="display:none;">
+                <label for="delivery-name">Name to receive order:</label>
+                <input type="text" id="delivery-name" placeholder="Recipient name">
+                <label for="delivery-location">Delivery location:</label>
+                <input type="text" id="delivery-location" placeholder="Hall/Hostel, room or landmark">
+            </div>
+
+            <div id="cart-buttons">
+                <button id="clear-cart" aria-label="Clear cart">Clear Cart</button>
+                <button id="order-cart" aria-label="Place order">Place Order</button>
+                <button id="close-cart" aria-label="Close cart">Close</button>
+            </div>
         </div>
     </div>
 
@@ -133,6 +190,8 @@
         </div>
     </footer>
 
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="order-service.js"></script>
     <script src="arcade.js"></script>
 </body>
 </html>

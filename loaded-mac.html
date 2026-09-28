@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loaded Fries | Arcade</title>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logos">
+            <a href="index.html"><img class="ilogo" src="img/arcade logo and typo-05.png" alt="Arcade logo"></a>
+        </div>
+
+        <div class="contact-strip">
+            <a href="tel:+233594892046"><i class="fi fi-rr-phone-call"></i> Call to Order</a>
+            <a href="https://wa.me/233554270879" target="_blank" rel="noopener"><i class="fi fi-brands-whatsapp"></i> Help / WhatsApp</a>
+        </div>
+
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="meal-type-wrap">
+        <h3 class="meal-type">Loaded Mac</h3>
+        <p class="meal-subtitle">Click on a variety to see options and price.</p>
+        <p class="breadcrumb-back"><a href="mains.html">&larr; Back to Mains</a></p>
+    </div>
+
+    <!--
+      IMAGES: each card below points to img/<category>/<item>.jpg
+      Drop your real photos into those folders using the same filenames
+      (or update the src="" paths here) and they will show automatically.
+
+      SHORT VIDEO CLIPS (optional): to use a 1-2 second looping food clip
+      instead of a still photo on any card, replace that card's <img ...>
+      line with:
+        <video autoplay loop muted playsinline>
+          <source src="img/<category>/<item>.mp4" type="video/mp4">
+        </video>
+      It gets the same circular floating treatment as the photos —
+      no other changes needed.
+    -->
+
+    <div class="menu-section">
+        <h4 class="section-heading">Loaded Mac</h4>
+        <div class="lf">
+
+            <div class="menu-item" data-name="Chicken Loaded Mac">
+                <img src="img/mains/chicken-loaded-mac.jpg" alt="Chicken Loaded Mac">
+                <div class="item-info">
+                    <h3 class="item-name">Chicken Loaded Mac</h3>
+                    <p class="item-description">Creamy mac and cheese topped with grilled chicken and our house sauce.</p>
+                    <p class="tap-hint">Tap for sizes &amp; price</p>
+                </div>
+                <div class="size-options" role="radiogroup" aria-label="Select options for Chicken Loaded Mac">
+                    <p class="option-group-label">Size</p>
+                        <input type="radio" id="chicken-loaded-mac-small" class="size-radio" name="size-chicken-loaded-mac" value="Small" data-maxstock="20" checked />
+                        <label class="size-option-label" for="chicken-loaded-mac-small">Small <span class="price-tbd-tag">(Price TBD)</span></label>
+                        <input type="radio" id="chicken-loaded-mac-medium" class="size-radio" name="size-chicken-loaded-mac" value="Medium" data-maxstock="20" />
+                        <label class="size-option-label" for="chicken-loaded-mac-medium">Medium <span class="price-tbd-tag">(Price TBD)</span></label>
+                        <input type="radio" id="chicken-loaded-mac-large" class="size-radio" name="size-chicken-loaded-mac" value="Large" data-maxstock="20" />
+                        <label class="size-option-label" for="chicken-loaded-mac-large">Large <span class="price-tbd-tag">(Price TBD)</span></label>
+
+                    <div class="item-price">Price coming soon</div>
+
+                    <div class="extras-note">
+                        * Extras and the cheeseless option are shown for preview — pricing for all of them is coming soon.
+                    </div>
+
+                    <div class="extras-options" aria-label="Extras options">
+                        <label for="extra-chicken-loaded-mac-chicken">
+                            <input type="checkbox" id="extra-chicken-loaded-mac-chicken">
+                            Chicken <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-chicken-loaded-mac-cheese">
+                            <input type="checkbox" id="extra-chicken-loaded-mac-cheese">
+                            Cheese <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-chicken-loaded-mac-ketchup">
+                            <input type="checkbox" id="extra-chicken-loaded-mac-ketchup">
+                            Ketchup <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-chicken-loaded-mac-special-sauce">
+                            <input type="checkbox" id="extra-chicken-loaded-mac-special-sauce">
+                            Special Sauce <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-chicken-loaded-mac-hot-sauce">
+                            <input type="checkbox" id="extra-chicken-loaded-mac-hot-sauce">
+                            Hot Sauce <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="cheeseless-chicken-loaded-mac">
+                            <input type="checkbox" id="cheeseless-chicken-loaded-mac">
+                            Cheeseless <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                    </div>
+
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="menu-item" data-name="Beef Loaded Mac">
+                <img src="img/mains/beef-loaded-mac.jpg" alt="Beef Loaded Mac">
+                <div class="item-info">
+                    <h3 class="item-name">Beef Loaded Mac</h3>
+                    <p class="item-description">Creamy mac and cheese topped with seasoned beef strips.</p>
+                    <p class="tap-hint">Tap for sizes &amp; price</p>
+                </div>
+                <div class="size-options" role="radiogroup" aria-label="Select options for Beef Loaded Mac">
+                    <p class="option-group-label">Size</p>
+                        <input type="radio" id="beef-loaded-mac-small" class="size-radio" name="size-beef-loaded-mac" value="Small" data-maxstock="20" checked />
+                        <label class="size-option-label" for="beef-loaded-mac-small">Small <span class="price-tbd-tag">(Price TBD)</span></label>
+                        <input type="radio" id="beef-loaded-mac-medium" class="size-radio" name="size-beef-loaded-mac" value="Medium" data-maxstock="20" />
+                        <label class="size-option-label" for="beef-loaded-mac-medium">Medium <span class="price-tbd-tag">(Price TBD)</span></label>
+                        <input type="radio" id="beef-loaded-mac-large" class="size-radio" name="size-beef-loaded-mac" value="Large" data-maxstock="20" />
+                        <label class="size-option-label" for="beef-loaded-mac-large">Large <span class="price-tbd-tag">(Price TBD)</span></label>
+
+                    <div class="item-price">Price coming soon</div>
+
+                    <div class="extras-note">
+                        * Extras and the cheeseless option are shown for preview — pricing for all of them is coming soon.
+                    </div>
+
+                    <div class="extras-options" aria-label="Extras options">
+                        <label for="extra-beef-loaded-mac-beef">
+                            <input type="checkbox" id="extra-beef-loaded-mac-beef">
+                            Beef <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-beef-loaded-mac-cheese">
+                            <input type="checkbox" id="extra-beef-loaded-mac-cheese">
+                            Cheese <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-beef-loaded-mac-ketchup">
+                            <input type="checkbox" id="extra-beef-loaded-mac-ketchup">
+                            Ketchup <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-beef-loaded-mac-special-sauce">
+                            <input type="checkbox" id="extra-beef-loaded-mac-special-sauce">
+                            Special Sauce <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-beef-loaded-mac-hot-sauce">
+                            <input type="checkbox" id="extra-beef-loaded-mac-hot-sauce">
+                            Hot Sauce <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="cheeseless-beef-loaded-mac">
+                            <input type="checkbox" id="cheeseless-beef-loaded-mac">
+                            Cheeseless <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                    </div>
+
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="menu-item" data-name="Sausage Loaded Mac">
+                <img src="img/mains/sausage-loaded-mac.jpg" alt="Sausage Loaded Mac">
+                <div class="item-info">
+                    <h3 class="item-name">Sausage Loaded Mac</h3>
+                    <p class="item-description">Creamy mac and cheese topped with sliced sausage and a smoky sauce drizzle.</p>
+                    <p class="tap-hint">Tap for sizes &amp; price</p>
+                </div>
+                <div class="size-options" role="radiogroup" aria-label="Select options for Sausage Loaded Mac">
+                    <p class="option-group-label">Size</p>
+                        <input type="radio" id="sausage-loaded-mac-small" class="size-radio" name="size-sausage-loaded-mac" value="Small" data-maxstock="20" checked />
+                        <label class="size-option-label" for="sausage-loaded-mac-small">Small <span class="price-tbd-tag">(Price TBD)</span></label>
+                        <input type="radio" id="sausage-loaded-mac-medium" class="size-radio" name="size-sausage-loaded-mac" value="Medium" data-maxstock="20" />
+                        <label class="size-option-label" for="sausage-loaded-mac-medium">Medium <span class="price-tbd-tag">(Price TBD)</span></label>
+                        <input type="radio" id="sausage-loaded-mac-large" class="size-radio" name="size-sausage-loaded-mac" value="Large" data-maxstock="20" />
+                        <label class="size-option-label" for="sausage-loaded-mac-large">Large <span class="price-tbd-tag">(Price TBD)</span></label>
+
+                    <div class="item-price">Price coming soon</div>
+
+                    <div class="extras-note">
+                        * Extras and the cheeseless option are shown for preview — pricing for all of them is coming soon.
+                    </div>
+
+                    <div class="extras-options" aria-label="Extras options">
+                        <label for="extra-sausage-loaded-mac-sausage">
+                            <input type="checkbox" id="extra-sausage-loaded-mac-sausage">
+                            Sausage <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-sausage-loaded-mac-cheese">
+                            <input type="checkbox" id="extra-sausage-loaded-mac-cheese">
+                            Cheese <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-sausage-loaded-mac-ketchup">
+                            <input type="checkbox" id="extra-sausage-loaded-mac-ketchup">
+                            Ketchup <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-sausage-loaded-mac-special-sauce">
+                            <input type="checkbox" id="extra-sausage-loaded-mac-special-sauce">
+                            Special Sauce <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-sausage-loaded-mac-hot-sauce">
+                            <input type="checkbox" id="extra-sausage-loaded-mac-hot-sauce">
+                            Hot Sauce <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="cheeseless-sausage-loaded-mac">
+                            <input type="checkbox" id="cheeseless-sausage-loaded-mac">
+                            Cheeseless <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                    </div>
+
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="menu-item" data-name="Fullhouse Loaded Mac">
+                <img src="img/mains/fullhouse-loaded-mac.jpg" alt="Fullhouse Loaded Mac">
+                <div class="item-info">
+                    <h3 class="item-name">Fullhouse</h3>
+                    <p class="item-description">Creamy mac and cheese loaded with chicken, beef, and sausage all in one bowl.</p>
+                    <p class="tap-hint">Tap for sizes &amp; price</p>
+                </div>
+                <div class="size-options" role="radiogroup" aria-label="Select options for Fullhouse Loaded Mac">
+                    <p class="option-group-label">Size</p>
+                        <input type="radio" id="fullhouse-loaded-mac-small" class="size-radio" name="size-fullhouse-loaded-mac" value="Small" data-maxstock="20" checked />
+                        <label class="size-option-label" for="fullhouse-loaded-mac-small">Small <span class="price-tbd-tag">(Price TBD)</span></label>
+                        <input type="radio" id="fullhouse-loaded-mac-medium" class="size-radio" name="size-fullhouse-loaded-mac" value="Medium" data-maxstock="20" />
+                        <label class="size-option-label" for="fullhouse-loaded-mac-medium">Medium <span class="price-tbd-tag">(Price TBD)</span></label>
+                        <input type="radio" id="fullhouse-loaded-mac-large" class="size-radio" name="size-fullhouse-loaded-mac" value="Large" data-maxstock="20" />
+                        <label class="size-option-label" for="fullhouse-loaded-mac-large">Large <span class="price-tbd-tag">(Price TBD)</span></label>
+
+                    <div class="item-price">Price coming soon</div>
+
+                    <div class="extras-note">
+                        * Extras and the cheeseless option are shown for preview — pricing for all of them is coming soon.
+                    </div>
+
+                    <div class="extras-options" aria-label="Extras options">
+                        <label for="extra-fullhouse-loaded-mac-chicken">
+                            <input type="checkbox" id="extra-fullhouse-loaded-mac-chicken">
+                            Chicken <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-fullhouse-loaded-mac-beef">
+                            <input type="checkbox" id="extra-fullhouse-loaded-mac-beef">
+                            Beef <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-fullhouse-loaded-mac-sausage">
+                            <input type="checkbox" id="extra-fullhouse-loaded-mac-sausage">
+                            Sausage <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-fullhouse-loaded-mac-cheese">
+                            <input type="checkbox" id="extra-fullhouse-loaded-mac-cheese">
+                            Cheese <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-fullhouse-loaded-mac-ketchup">
+                            <input type="checkbox" id="extra-fullhouse-loaded-mac-ketchup">
+                            Ketchup <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-fullhouse-loaded-mac-special-sauce">
+                            <input type="checkbox" id="extra-fullhouse-loaded-mac-special-sauce">
+                            Special Sauce <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="extra-fullhouse-loaded-mac-hot-sauce">
+                            <input type="checkbox" id="extra-fullhouse-loaded-mac-hot-sauce">
+                            Hot Sauce <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                        <label for="cheeseless-fullhouse-loaded-mac">
+                            <input type="checkbox" id="cheeseless-fullhouse-loaded-mac">
+                            Cheeseless <span class="price-tbd-tag">(Price TBD)</span>
+                        </label>
+                    </div>
+
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="cart-summary" role="button" tabindex="0" aria-label="View cart. 0 items in cart.">
+        🛒 Cart <span id="cart-count">0</span>
+    </div>
+
+    <div id="cart-modal" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title">
+        <div id="cart-content">
+            <h2 id="cart-title">Your Cart</h2>
+            <div id="cart-items" role="list" aria-live="polite">
+            </div>
+            <div id="cart-total">Total: ₵0.00</div>
+
+            <div>
+                <label for="phone-number">Phone Number:</label>
+                <input type="text" id="phone-number" placeholder="Enter your phone number" aria-required="true" aria-label="Phone number input">
+            </div>
+
+            <div class="fulfillment-select" role="radiogroup" aria-label="Pickup or delivery">
+                <label><input type="radio" name="fulfillment" value="pickup" checked> Pickup</label>
+                <label><input type="radio" name="fulfillment" value="delivery"> Delivery</label>
+            </div>
+            <div id="delivery-fields" style="display:none;">
+                <label for="delivery-name">Name to receive order:</label>
+                <input type="text" id="delivery-name" placeholder="Recipient name">
+                <label for="delivery-location">Delivery location:</label>
+                <input type="text" id="delivery-location" placeholder="Hall/Hostel, room or landmark">
+            </div>
+
+            <div id="cart-buttons">
+                <button id="clear-cart" aria-label="Clear cart">Clear Cart</button>
+                <button id="order-cart" aria-label="Place order">Place Order</button>
+                <button id="close-cart" aria-label="Close cart">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>Arcade is your go-to spot for loaded fries, and more, made to order with quality ingredients and quick, friendly service.</p>
+
+                    <div class="social-icons">
+                        <a href="https://wa.me/233554270879" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fi fi-brands-whatsapp"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fi fi-brands-instagram"></i></a>
+                        <a href="#" aria-label="Tiktok"><i class="fi fi-brands-tik-tok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fi fi-tr-angle-double-small-right"></i>Home</a></li>
+                        <li><a href="menu.html"><i class="fi fi-tr-angle-double-small-right"></i>Menu</a></li>
+                        <li><a href="gallery.html"><i class="fi fi-tr-angle-double-small-right"></i>Gallery</a></li>
+                        <li><a href="about.html"><i class="fi fi-tr-angle-double-small-right"></i>About</a></li>
+                        <li><a href="contact.html"><i class="fi fi-tr-angle-double-small-right"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section contact">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fi fi-rs-marker"></i>
+                            <span>KNUST, St. Theresa's Hostel</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fi fi-rr-envelope"></i>
+                            <a href="mailto:arcade.ww12@gmail.com">arcade.ww12@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fi fi-rr-phone-call"></i>
+                            <a href="tel:+233594892046">Order: +233 59 489 2046</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fi fi-brands-whatsapp"></i>
+                            <a href="https://wa.me/233554270879" target="_blank" rel="noopener">Help/WhatsApp: +233 55 427 0879</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Arcade. All Rights Reserved.</p>
+                <div class="footer-creator">
+                    <img src="img/ka.jpg" alt="">
+                    <p>Created by ANYO</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="order-service.js"></script>
+    <script src="arcade.js"></script>
+</body>
+</html>

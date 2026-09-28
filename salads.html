@@ -23,8 +23,8 @@
         </div>
 
         <div class="contact-strip">
-            <a href="tel:+233554270879"><i class="fi fi-rr-phone-call"></i> Call / Order</a>
-            <a href="https://wa.me/233554270879" target="_blank" rel="noopener"><i class="fi fi-brands-whatsapp"></i> WhatsApp</a>
+            <a href="tel:+233594892046"><i class="fi fi-rr-phone-call"></i> Call to Order</a>
+            <a href="https://wa.me/233554270879" target="_blank" rel="noopener"><i class="fi fi-brands-whatsapp"></i> Help / WhatsApp</a>
         </div>
 
         <nav>
@@ -44,9 +44,13 @@
         </div>
     </div>
 
+    <div class="meal-type-wrap">
+        <p class="breadcrumb-back"><a href="menu.html">&larr; Back to full menu</a></p>
+        <h3 class="meal-type">Salads</h3>
+        <p class="meal-subtitle">Click on a variety to see options and price.</p>
+    </div>
+
     <div>
-            <h3 class="meal-type">Salads</h3>
-            <p class="meal-subtitle">Fresh-cut daily. Tap a card to see sizes and prices.</p>
             <div class="lf">
                 <div class="menu-item" data-name="Veggie salad">
                     <img src="img/salad/veggie salad.jpg" alt="">
@@ -180,6 +184,18 @@
                 <input type="text" id="phone-number" placeholder="Enter your phone number" aria-required="true" aria-label="Phone number input">
              </div>
 
+             <!-- Pickup / Delivery -->
+             <div class="fulfillment-select" role="radiogroup" aria-label="Pickup or delivery">
+                <label><input type="radio" name="fulfillment" value="pickup" checked> Pickup</label>
+                <label><input type="radio" name="fulfillment" value="delivery"> Delivery</label>
+             </div>
+             <div id="delivery-fields" style="display:none;">
+                <label for="delivery-name">Name to receive order:</label>
+                <input type="text" id="delivery-name" placeholder="Recipient name">
+                <label for="delivery-location">Delivery location:</label>
+                <input type="text" id="delivery-location" placeholder="Hall/Hostel, room or landmark">
+             </div>
+
             <div id="cart-buttons">
                 <button id="clear-cart" aria-label="Clear cart">Clear Cart</button>
                 <button id="order-cart" aria-label="Place order">Place Order</button>
@@ -194,7 +210,7 @@
             <div class="footer-content">
                 <div class="footer-section about">
                         <h3>About Us</h3>
-                        <p>Arcade is your go-to spot on campus for loaded fries and fresh salads, made to order with quality ingredients and quick, friendly service.</p>
+                        <p>Arcade is your go-to spot for loaded fries, and more, made to order with quality ingredients and quick, friendly service.</p>
 
 
                     <div class="social-icons">
@@ -229,7 +245,11 @@
 
                         <div class="contact-item">
                             <i class="fi fi-rr-phone-call"></i>
-                            <a href="tel:+233554270879">+233 55 427 0879</a>
+                            <a href="tel:+233594892046">Order: +233 59 489 2046</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fi fi-brands-whatsapp"></i>
+                            <a href="https://wa.me/233554270879" target="_blank" rel="noopener">Help/WhatsApp: +233 55 427 0879</a>
                         </div>
                     </div>
                 </div>
@@ -246,6 +266,8 @@
     </footer>
 
 
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="order-service.js"></script>
     <script src="arcade.js"></script>
 </body>
 </html>

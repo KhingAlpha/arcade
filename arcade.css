@@ -4,15 +4,30 @@
    Design tokens
    ============================ */
 :root {
-  --maroon: #801323;
-  --maroon-dark: #5c0e19;
-  --maroon-darker: #400a12;
-  --cream: #E7D8CB;
-  --cream-soft: #F6EFE6;
-  --charcoal: #2A1013;
-  --gold: #E8A33D;
-  --gold-dark: #c77f1f;
-  --shadow: 0 10px 30px rgba(42, 16, 19, 0.15);
+  /* Red — dominant */
+  --maroon: #C81E3A;
+  --maroon-dark: #9E1730;
+  --maroon-darker: #6E0F21;
+
+  /* White / off-white — dominant */
+  --cream: #FBF7F2;
+  --cream-soft: #FDFBF8;
+
+  --charcoal: #22201F;
+
+  /* Green — dominant (used for CTAs and price accents) */
+  --green: #1E8E4E;
+  --green-dark: #146637;
+
+  /* Gold — trace accent */
+  --gold: #D9A62E;
+  --gold-dark: #B3841E;
+
+  /* Purple — trace accent */
+  --purple: #6B3FA0;
+  --purple-soft: #EDE4F7;
+
+  --shadow: 0 10px 30px rgba(34, 32, 31, 0.14);
 }
 
 * {
@@ -40,7 +55,7 @@ a {
    ============================ */
 .header {
   width: 100%;
-  height: 80px;
+  height: 130px;
   background-color: var(--maroon);
   background-image: radial-gradient(rgba(231, 216, 203, 0.14) 1.4px, transparent 1.4px);
   background-size: 18px 18px;
@@ -61,7 +76,7 @@ a {
 }
 
 .logos .ilogo {
-  height: 60px;
+  height: 220px;
   width: auto;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
 }
@@ -156,8 +171,8 @@ nav ul li a.active {
 .hero {
   background-color: var(--cream);
   background-image:
-    radial-gradient(circle at 12% 20%, rgba(128,19,35,0.06) 0, transparent 45%),
-    radial-gradient(circle at 88% 75%, rgba(232,163,61,0.14) 0, transparent 40%);
+    radial-gradient(circle at 12% 20%, rgba(200,30,58,0.06) 0, transparent 45%),
+    radial-gradient(circle at 88% 75%, rgba(217,166,46,0.14) 0, transparent 40%);
   text-align: center;
   width: 100%;
   position: relative;
@@ -185,8 +200,8 @@ nav ul li a.active {
 .hero .btn {
   position: relative;
   margin-top: -34px;
-  background-color: var(--maroon);
-  color: var(--cream);
+  background-color: var(--green);
+  color: white;
   border: none;
   padding: 18px 46px;
   font-size: 1.2rem;
@@ -197,7 +212,7 @@ nav ul li a.active {
 }
 
 .hero .btn:hover {
-  background-color: var(--maroon-dark);
+  background-color: var(--green-dark);
   cursor: pointer;
   transform: translateY(-3px);
 }
@@ -213,50 +228,101 @@ nav ul li a.active {
 }
 
 /* ============================
-   Quick info strip (order / hours / momo)
+   About section (homepage)
    ============================ */
-.quick-info {
-  max-width: 1100px;
-  margin: -60px auto 40px;
+.about-section {
+  max-width: 760px;
+  margin: -50px auto 0;
   position: relative;
   z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  padding: 0 20px;
-}
-
-.quick-info .info-card {
   background: white;
-  border-radius: 16px;
-  padding: 20px;
+  border-radius: 20px;
   box-shadow: var(--shadow);
+  padding: 44px 40px;
   text-align: center;
 }
 
-.quick-info .info-card i {
-  font-size: 1.6rem;
-  color: var(--maroon);
-  margin-bottom: 8px;
-  display: block;
-}
-
-.quick-info .info-card h4 {
-  margin: 6px 0 4px;
+.about-section h2 {
   color: var(--charcoal);
-  font-family: 'Fredoka', sans-serif;
+  font-size: 1.9rem;
+  margin: 0 0 8px;
+  position: relative;
+  display: inline-block;
 }
 
-.quick-info .info-card p,
-.quick-info .info-card a {
-  margin: 0;
-  font-size: 0.9rem;
+.about-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--green);
+  margin: 10px auto 18px;
+  border-radius: 2px;
+}
+
+.about-section p {
   color: #555;
-  text-decoration: none;
+  line-height: 1.75;
+  font-size: 1rem;
+  margin: 0 0 16px;
 }
 
-.quick-info .info-card a:hover {
+.about-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================
+   Features strip (homepage)
+   ============================ */
+.features-strip {
+  max-width: 1100px;
+  margin: 50px auto 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 0 20px;
+}
+
+.feature-item {
+  text-align: center;
+  padding: 10px 16px;
+}
+
+.feature-item i {
+  font-size: 1.8rem;
+  color: var(--green-dark);
+  background: #E6F4EC;
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 14px;
+}
+
+.feature-item:nth-child(2) i {
+  color: var(--gold-dark);
+  background: #FBF0D9;
+}
+
+.feature-item:nth-child(3) i {
+  color: var(--purple);
+  background: var(--purple-soft);
+}
+
+.feature-item h4 {
+  font-family: 'Fredoka', sans-serif;
   color: var(--maroon);
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+
+.feature-item p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 /* ============================
@@ -266,13 +332,13 @@ nav ul li a.active {
   padding: 20px;
   text-align: center;
   margin: 60px auto 40px;
-  color: var(--maroon);
+  color: var(--charcoal);
   font-size: 2.2rem;
 }
 
 hr {
   border: none;
-  border-bottom: 1px solid rgba(42,16,19,0.15);
+  border-bottom: 1px solid rgba(34,32,31,0.15);
 }
 
 /* ============================
@@ -283,7 +349,7 @@ footer {
   box-sizing: border-box;
   min-height: auto;
   padding: 40px 20px 20px;
-  background-color: var(--maroon);
+  background-color: var(--green-dark);
   color: var(--cream);
 }
 
@@ -425,6 +491,11 @@ footer {
     display: flex;
   }
 
+  .about-section {
+    margin: -30px 16px 0;
+    padding: 30px 24px;
+  }
+
   .contact-strip {
     display: none;
   }
@@ -493,6 +564,6 @@ footer {
 
 @media (max-width: 600px) {
   .logos .ilogo {
-    height: 46px;
+    height: 120px;
   }
 }

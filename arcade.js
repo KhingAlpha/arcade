@@ -54,7 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     extrasCheckboxes.forEach((checkbox) => {
       if (checkbox.checked) {
-        extrasPrice += parseFloat(checkbox.dataset.price);
+        const priceAttr = checkbox.dataset.price;
+        extrasPrice += priceAttr ? parseFloat(priceAttr) : 0;
         extrasIds.push(checkbox.id);
         const labelElement = menuItem.querySelector(`label[for="${checkbox.id}"]`);
         if (labelElement) {
@@ -63,22 +64,50 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
+    // Optional "base" choice (e.g. French Fries vs Sweet Potato) — folded
+    // into extras so the existing cart/order plumbing needs no changes.
+    const baseInput = menuItem.querySelector("input.base-radio:checked");
+    if (baseInput) {
+      extrasIds.push(`base:${baseInput.value}`);
+      extrasNames.push(`Base: ${baseInput.value}`);
+    }
+
     extrasIds.sort();
     const extrasKey = extrasIds.join(",");
 
     return { extrasPrice, extrasKey, extrasNames };
   }
 
+  function isPricePending(menuItem) {
+    const selectedInput = menuItem.querySelector("input.size-radio:checked");
+    return !selectedInput || !selectedInput.dataset.price;
+  }
+
   function updatePriceDisplay(menuItem) {
     const selectedInput = menuItem.querySelector(
-      "input[type='radio']:checked"
+      "input.size-radio:checked"
     );
     const priceDisplay = menuItem.querySelector(".item-price");
+    const addToCartBtn = menuItem.querySelector(".add-to-cart");
+
     if (selectedInput && priceDisplay) {
+      if (!selectedInput.dataset.price) {
+        priceDisplay.textContent = "Price coming soon";
+        priceDisplay.classList.add("price-pending");
+        if (addToCartBtn) {
+          addToCartBtn.disabled = true;
+          addToCartBtn.textContent = "Pricing coming soon";
+        }
+        return;
+      }
       const basePrice = parseFloat(selectedInput.dataset.price);
       const { extrasPrice } = getSelectedExtrasInfo(menuItem);
       const totalPrice = basePrice + extrasPrice;
       priceDisplay.textContent = `₵${totalPrice.toFixed(2)}`;
+      priceDisplay.classList.remove("price-pending");
+      if (addToCartBtn && addToCartBtn.textContent === "Pricing coming soon") {
+        addToCartBtn.textContent = "Add to Cart";
+      }
     } else if (priceDisplay) {
       priceDisplay.textContent = "";
     }
@@ -94,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateStockAvailability() {
     document.querySelectorAll(".menu-item").forEach((menuItem) => {
       const name = menuItem.dataset.name;
-      const sizeInputs = menuItem.querySelectorAll("input[type='radio']");
+      const sizeInputs = menuItem.querySelectorAll("input.size-radio");
       const addToCartBtn = menuItem.querySelector(".add-to-cart");
       let anyAvailable = false;
 
@@ -129,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      if (addToCartBtn) {
+      if (addToCartBtn && !isPricePending(menuItem)) {
         addToCartBtn.disabled = !anyAvailable;
       }
     });
@@ -155,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!menuItem) return MAX_PER_ITEM_SIZE;
 
     const sizeInput = menuItem.querySelector(
-      `input[type="radio"][value="${size}"]`
+      `input.size-radio[value="${size}"]`
     );
     if (!sizeInput) return MAX_PER_ITEM_SIZE;
 
@@ -316,7 +345,7 @@ document.addEventListener('DOMContentLoaded', function () {
     updateStockAvailability();
   }
 
-  function orderCart() {
+  async function orderCart() {
     if (cart.length === 0) {
       alert("Your cart is empty. Please add items before placing an order.");
       return;
@@ -327,38 +356,90 @@ document.addEventListener('DOMContentLoaded', function () {
       alert("Please enter your phone number.");
       return;
     }
-    const recipient = "agyeman.nana936@gmail.com"; 
-    const subject = encodeURIComponent("New Order from Arcade");
-    let body = "Hello,%0D%0A%0D%0AI would like to place an order for the following items:%0D%0A%0D%0A";
 
-    cart.forEach((item, index) => {
-      body += `${index + 1}. ${item.name} (${item.size})`;
-      if (item.extrasNames && item.extrasNames.length > 0) {
-        if (item.extrasNames.length === 1) {
-          body += ` with ${item.extrasNames[0]}`;
-        } else {
-          body += " with extras";
-        }
+    const fulfillmentInput = document.querySelector('input[name="fulfillment"]:checked');
+    const fulfillment = fulfillmentInput ? fulfillmentInput.value : "pickup";
+
+    let deliveryLocation = "";
+    let deliveryName = "";
+    if (fulfillment === "delivery") {
+      deliveryLocation = document.getElementById("delivery-location").value.trim();
+      deliveryName = document.getElementById("delivery-name").value.trim();
+      if (!deliveryLocation || !deliveryName) {
+        alert("Please fill in your delivery location and name.");
+        return;
       }
-      body += ` x${item.quantity} - ₵${(item.price * item.quantity).toFixed(2)}%0D%0A`;
-    });
+    }
 
-    body += `%0D%0ATotal: ₵${calculateTotal().toFixed(2)}%0D%0A%0D%0A`;
-    body += `Phone Number: ${phoneNumber}%0D%0A%0D%0APlease contact me to confirm the order.%0D%0A%0D%0AThank you!`;
+    if (!window.ArcadeOrders) {
+      alert("Ordering system is still loading. Please wait a moment and try again.");
+      return;
+    }
 
-    const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
+    orderCartBtn.disabled = true;
+    orderCartBtn.textContent = "Placing order...";
+
+    try {
+      const accepting = await window.ArcadeOrders.checkAcceptingOrders();
+      if (!accepting) {
+        alert("Sorry, we're not accepting orders right now. Please check back shortly.");
+        return;
+      }
+
+      const itemsPayload = cart.map((item) => ({
+        name: item.name,
+        size: item.size,
+        quantity: item.quantity,
+        price: item.price,
+        extras: item.extrasNames || []
+      }));
+
+      const result = await window.ArcadeOrders.submitOrder({
+        items: itemsPayload,
+        total: calculateTotal(),
+        phone: phoneNumber,
+        fulfillment,
+        deliveryLocation,
+        deliveryName
+      });
+
+      alert(
+        `Order placed! Your order number is ${result.orderNumber}.\n\n` +
+        `Total: ₵${calculateTotal().toFixed(2)}\n` +
+        `Please send MoMo payment to 0554270879 and keep your order number handy.\n\n` +
+        `We'll reach out on ${phoneNumber} to confirm.`
+      );
+
+      clearCart();
+      hideCart();
+    } catch (err) {
+      console.error("Order submission failed:", err);
+      alert("Something went wrong placing your order. Please try again or reach us on WhatsApp.");
+    } finally {
+      orderCartBtn.disabled = false;
+      orderCartBtn.textContent = "Place Order";
+    }
   }
 
   document.querySelectorAll(".menu-item").forEach((item) => {
-    const sizeInputs = item.querySelectorAll("input[type='radio']");
+    const sizeInputs = item.querySelectorAll("input.size-radio");
+    const baseInputs = item.querySelectorAll("input.base-radio");
     const extrasCheckboxes = item.querySelectorAll(
       ".extras-options input[type='checkbox']"
     );
     const addToCartBtn = item.querySelector(".add-to-cart");
     const name = item.dataset.name;
 
+    // Initialize price/button state on load (handles pending-price items).
+    updatePriceDisplay(item);
+
     sizeInputs.forEach((input) => {
+      input.addEventListener("change", () => {
+        updatePriceDisplay(item);
+      });
+    });
+
+    baseInputs.forEach((input) => {
       input.addEventListener("change", () => {
         updatePriceDisplay(item);
       });
@@ -372,8 +453,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (addToCartBtn) {
       addToCartBtn.addEventListener("click", () => {
+        if (isPricePending(item)) {
+          alert("Pricing for this item isn't set yet — check back soon!");
+          return;
+        }
         const selectedSizeInput = item.querySelector(
-          "input[type='radio']:checked"
+          "input.size-radio:checked"
         );
         if (!selectedSizeInput) {
           alert("Please select a size before adding to cart.");
@@ -388,7 +473,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (
           addToCart(name, size, totalItemPrice, extrasPrice, extrasKey, extrasNames, maxStock)
         ) {
-          alert(`Added ${name} (${size}) with extras to cart!`);
+          alert(`Added ${name} (${size}) to cart!`);
         }
       });
     }
@@ -413,6 +498,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
   if (orderCartBtn) orderCartBtn.addEventListener("click", orderCart);
+
+  document.querySelectorAll('input[name="fulfillment"]').forEach((radio) => {
+    radio.addEventListener("change", () => {
+      const deliveryFields = document.getElementById("delivery-fields");
+      if (!deliveryFields) return;
+      deliveryFields.style.display = radio.value === "delivery" && radio.checked ? "block" : "none";
+    });
+  });
 
   if (cartModal) {
     cartModal.addEventListener("click", (e) => {
