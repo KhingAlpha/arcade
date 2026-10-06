@@ -362,11 +362,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let deliveryLocation = "";
     let deliveryName = "";
+    let pickupName = "";
     if (fulfillment === "delivery") {
       deliveryLocation = document.getElementById("delivery-location").value.trim();
       deliveryName = document.getElementById("delivery-name").value.trim();
       if (!deliveryLocation || !deliveryName) {
         alert("Please fill in your delivery location and name.");
+        return;
+      }
+    } else {
+      const pickupNameInput = document.getElementById("pickup-name");
+      pickupName = pickupNameInput ? pickupNameInput.value.trim() : "";
+      if (!pickupName) {
+        alert("Please enter the name for your pickup order.");
         return;
       }
     }
@@ -400,7 +408,8 @@ document.addEventListener('DOMContentLoaded', function () {
         phone: phoneNumber,
         fulfillment,
         deliveryLocation,
-        deliveryName
+        deliveryName,
+        pickupName
       });
 
       alert(
@@ -501,9 +510,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelectorAll('input[name="fulfillment"]').forEach((radio) => {
     radio.addEventListener("change", () => {
+      const pickupFields = document.getElementById("pickup-fields");
       const deliveryFields = document.getElementById("delivery-fields");
-      if (!deliveryFields) return;
-      deliveryFields.style.display = radio.value === "delivery" && radio.checked ? "block" : "none";
+      if (pickupFields) {
+        pickupFields.style.display = radio.value === "pickup" && radio.checked ? "block" : "none";
+      }
+      if (deliveryFields) {
+        deliveryFields.style.display = radio.value === "delivery" && radio.checked ? "block" : "none";
+      }
     });
   });
 

@@ -114,25 +114,25 @@
                 </div>
             </div>
 
-            <div class="menu-item" data-name="Abele Walls">
-                <img src="img/desserts/abele-walls.jpg" alt="Abele Walls">
+            <div class="menu-item" data-name="Ice Cream">
+                <img src="img/desserts/ice-cream.jpg" alt="Ice Cream">
                 <div class="item-info">
-                    <h3 class="item-name">Abele Walls</h3>
-                    <p class="item-description">Classic Wall's ice cream, pick your flavour.</p>
+                    <h3 class="item-name">Ice Cream</h3>
+                    <p class="item-description">Classic ice cream, pick your flavour.</p>
                     <p class="tap-hint">Tap for flavours &amp; price</p>
                 </div>
-                <div class="size-options" role="radiogroup" aria-label="Select flavour for Abele Walls">
+                <div class="size-options" role="radiogroup" aria-label="Select flavour for Ice Cream">
                     <p class="option-group-label">Flavour</p>
-                        <input type="radio" id="abele-walls-vanilla" class="size-radio" name="size-abele-walls" value="Vanilla" data-maxstock="20" checked />
-                        <label class="size-option-label" for="abele-walls-vanilla">Vanilla <span class="price-tbd-tag">(Price TBD)</span></label>
-                        <input type="radio" id="abele-walls-strawberry" class="size-radio" name="size-abele-walls" value="Strawberry" data-maxstock="20" />
-                        <label class="size-option-label" for="abele-walls-strawberry">Strawberry <span class="price-tbd-tag">(Price TBD)</span></label>
-                        <input type="radio" id="abele-walls-oreo" class="size-radio" name="size-abele-walls" value="Oreo" data-maxstock="20" />
-                        <label class="size-option-label" for="abele-walls-oreo">Oreo <span class="price-tbd-tag">(Price TBD)</span></label>
-                        <input type="radio" id="abele-walls-chocolate" class="size-radio" name="size-abele-walls" value="Chocolate" data-maxstock="20" />
-                        <label class="size-option-label" for="abele-walls-chocolate">Chocolate <span class="price-tbd-tag">(Price TBD)</span></label>
-                        <input type="radio" id="abele-walls-lemon" class="size-radio" name="size-abele-walls" value="Lemon" data-maxstock="20" />
-                        <label class="size-option-label" for="abele-walls-lemon">Lemon <span class="price-tbd-tag">(Price TBD)</span></label>
+                        <input type="radio" id="ice-cream-vanilla" class="size-radio" name="size-ice-cream" value="Vanilla" data-maxstock="20" checked />
+                        <label class="size-option-label" for="ice-cream-vanilla">Vanilla <span class="price-tbd-tag">(Price TBD)</span></label>
+                        <input type="radio" id="ice-cream-strawberry" class="size-radio" name="size-ice-cream" value="Strawberry" data-maxstock="20" />
+                        <label class="size-option-label" for="ice-cream-strawberry">Strawberry <span class="price-tbd-tag">(Price TBD)</span></label>
+                        <input type="radio" id="ice-cream-oreo" class="size-radio" name="size-ice-cream" value="Oreo" data-maxstock="20" />
+                        <label class="size-option-label" for="ice-cream-oreo">Oreo <span class="price-tbd-tag">(Price TBD)</span></label>
+                        <input type="radio" id="ice-cream-chocolate" class="size-radio" name="size-ice-cream" value="Chocolate" data-maxstock="20" />
+                        <label class="size-option-label" for="ice-cream-chocolate">Chocolate <span class="price-tbd-tag">(Price TBD)</span></label>
+                        <input type="radio" id="ice-cream-lemon" class="size-radio" name="size-ice-cream" value="Lemon" data-maxstock="20" />
+                        <label class="size-option-label" for="ice-cream-lemon">Lemon <span class="price-tbd-tag">(Price TBD)</span></label>
 
                     <div class="item-price">Price coming soon</div>
 
@@ -159,15 +159,21 @@
                 <input type="text" id="phone-number" placeholder="Enter your phone number" aria-required="true" aria-label="Phone number input">
             </div>
 
-            <div class="fulfillment-select" role="radiogroup" aria-label="Pickup or delivery">
-                <label><input type="radio" name="fulfillment" value="pickup" checked> Pickup</label>
-                <label><input type="radio" name="fulfillment" value="delivery"> Delivery</label>
+            <div id="pickup-fields" class="fulfillment-fields">
+                <label for="pickup-name">Name for pickup:</label>
+                <input type="text" id="pickup-name" placeholder="Your name">
             </div>
-            <div id="delivery-fields" style="display:none;">
+
+            <div id="delivery-fields" class="fulfillment-fields" style="display:none;">
                 <label for="delivery-name">Name to receive order:</label>
                 <input type="text" id="delivery-name" placeholder="Recipient name">
                 <label for="delivery-location">Delivery location:</label>
                 <input type="text" id="delivery-location" placeholder="Hall/Hostel, room or landmark">
+            </div>
+
+            <div class="fulfillment-select" role="radiogroup" aria-label="Pickup or delivery">
+                <label><input type="radio" name="fulfillment" value="pickup" checked> Pickup</label>
+                <label><input type="radio" name="fulfillment" value="delivery"> Delivery</label>
             </div>
 
             <div id="cart-buttons">

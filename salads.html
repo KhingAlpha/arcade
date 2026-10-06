@@ -174,27 +174,30 @@
         <div id="cart-content">
             <h2 id="cart-title">Your Cart</h2>
             <div id="cart-items" role="list" aria-live="polite">
-                <!-- Cart items will appear here -->
             </div>
             <div id="cart-total">Total: ₵0.00</div>
 
-            <!-- Phone Number Input -->
-             <div>
+            <div>
                 <label for="phone-number">Phone Number:</label>
                 <input type="text" id="phone-number" placeholder="Enter your phone number" aria-required="true" aria-label="Phone number input">
-             </div>
+            </div>
 
-             <!-- Pickup / Delivery -->
-             <div class="fulfillment-select" role="radiogroup" aria-label="Pickup or delivery">
-                <label><input type="radio" name="fulfillment" value="pickup" checked> Pickup</label>
-                <label><input type="radio" name="fulfillment" value="delivery"> Delivery</label>
-             </div>
-             <div id="delivery-fields" style="display:none;">
+            <div id="pickup-fields" class="fulfillment-fields">
+                <label for="pickup-name">Name for pickup:</label>
+                <input type="text" id="pickup-name" placeholder="Your name">
+            </div>
+
+            <div id="delivery-fields" class="fulfillment-fields" style="display:none;">
                 <label for="delivery-name">Name to receive order:</label>
                 <input type="text" id="delivery-name" placeholder="Recipient name">
                 <label for="delivery-location">Delivery location:</label>
                 <input type="text" id="delivery-location" placeholder="Hall/Hostel, room or landmark">
-             </div>
+            </div>
+
+            <div class="fulfillment-select" role="radiogroup" aria-label="Pickup or delivery">
+                <label><input type="radio" name="fulfillment" value="pickup" checked> Pickup</label>
+                <label><input type="radio" name="fulfillment" value="delivery"> Delivery</label>
+            </div>
 
             <div id="cart-buttons">
                 <button id="clear-cart" aria-label="Clear cart">Clear Cart</button>

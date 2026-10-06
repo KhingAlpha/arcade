@@ -69,8 +69,7 @@
             transition: color 0.15s;
         }
         .star-rating span.selected,
-        .star-rating span:hover,
-        .star-rating span:hover ~ span {
+        .star-rating span.hover-preview {
             color: var(--gold);
         }
         .contact-card button.submit-btn {
@@ -141,7 +140,7 @@
             <h3>Reach Us Directly</h3>
             <div class="direct-info">
                 <div class="contact-item"><i class="fi fi-rs-marker"></i><span>KNUST, St. Theresa's Hostel</span></div>
-                <div class="contact-item"><i class="fi fi-rr-phone-call"></i><a href="tel:+233554270879">+233 55 427 0879</a></div>
+                <div class="contact-item"><i class="fi fi-rr-phone-call"></i><a href="tel:+233594892046">+233 59 489 2046</a></div>
                 <div class="contact-item"><i class="fi fi-brands-whatsapp"></i><a href="https://wa.me/233554270879" target="_blank" rel="noopener">WhatsApp us</a></div>
                 <div class="contact-item"><i class="fi fi-rr-credit-card"></i><span>MoMo Payment: 0554270879</span></div>
                 <div class="contact-item"><i class="fi fi-rr-envelope"></i><a href="mailto:arcade.ww12@gmail.com">arcade.ww12@gmail.com</a></div>
@@ -257,13 +256,24 @@
         // Star rating widget
         const stars = document.querySelectorAll('#star-rating span');
         const ratingInput = document.getElementById('review-rating');
+
+        function paintStars(value, className) {
+            stars.forEach((s) => {
+                s.classList.toggle(className, parseInt(s.dataset.value) <= value);
+            });
+        }
+
         stars.forEach((star) => {
             star.addEventListener('click', () => {
                 const value = parseInt(star.dataset.value);
                 ratingInput.value = value;
-                stars.forEach((s) => {
-                    s.classList.toggle('selected', parseInt(s.dataset.value) <= value);
-                });
+                paintStars(value, 'selected');
+            });
+            star.addEventListener('mouseenter', () => {
+                paintStars(parseInt(star.dataset.value), 'hover-preview');
+            });
+            star.addEventListener('mouseleave', () => {
+                paintStars(0, 'hover-preview');
             });
         });
 
@@ -272,6 +282,10 @@
             e.preventDefault();
             const name = document.getElementById('review-name').value.trim();
             const rating = ratingInput.value;
+            if (rating === '0') {
+                alert('Please select a star rating before submitting.');
+                return;
+            }
             const text = document.getElementById('review-text').value.trim();
             const subject = encodeURIComponent('New Review from Arcade website');
             const body = encodeURIComponent(

@@ -162,15 +162,21 @@
                 <input type="text" id="phone-number" placeholder="Enter your phone number" aria-required="true" aria-label="Phone number input">
             </div>
 
-            <div class="fulfillment-select" role="radiogroup" aria-label="Pickup or delivery">
-                <label><input type="radio" name="fulfillment" value="pickup" checked> Pickup</label>
-                <label><input type="radio" name="fulfillment" value="delivery"> Delivery</label>
+            <div id="pickup-fields" class="fulfillment-fields">
+                <label for="pickup-name">Name for pickup:</label>
+                <input type="text" id="pickup-name" placeholder="Your name">
             </div>
-            <div id="delivery-fields" style="display:none;">
+
+            <div id="delivery-fields" class="fulfillment-fields" style="display:none;">
                 <label for="delivery-name">Name to receive order:</label>
                 <input type="text" id="delivery-name" placeholder="Recipient name">
                 <label for="delivery-location">Delivery location:</label>
                 <input type="text" id="delivery-location" placeholder="Hall/Hostel, room or landmark">
+            </div>
+
+            <div class="fulfillment-select" role="radiogroup" aria-label="Pickup or delivery">
+                <label><input type="radio" name="fulfillment" value="pickup" checked> Pickup</label>
+                <label><input type="radio" name="fulfillment" value="delivery"> Delivery</label>
             </div>
 
             <div id="cart-buttons">
